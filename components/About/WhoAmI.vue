@@ -17,25 +17,24 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-    name: 'IndexPage',
+	name: 'IndexPage',
 })
 </script>
 
 <style scoped>
 .row {
-    padding-bottom: 10px;
+	padding-bottom: 10px;
 }
 .card {
-    border-width: 0px;
-    .card-header {
-        background: 0 0;
-        border: none;
-        padding: 0px;
-    }
-    .card-body {
-        border: none;
-        padding: 0px;
-    }
+	border-width: 0px;
+	.card-header {
+		background: 0 0;
+		border: none;
+		padding: 0px;
+	}
+	.card-body {
+		border: none;
+		padding: 0px;
+	}
 }
-
 </style>

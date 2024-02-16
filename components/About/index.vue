@@ -21,65 +21,65 @@ import WhoAmI from '~/components/About/WhoAmI'
 import Exp from '~/components/About/Exp'
 
 export default Vue.extend({
-    name: 'IndexPage',
-    components: {
-        Info,
-        WhoAmI,
-        Exp,
-    },
+	name: 'IndexPage',
+	components: {
+		Info,
+		WhoAmI,
+		Exp,
+	},
 })
 </script>
 
 <style scoped>
 .card {
-    border-width: 0px;
-    .card-header {
-        background: 0 0;
-        border: none;
-        padding: 0px;
-    }
-    .card-body {
-        border: none;
-        padding: 0px;
-    }
+	border-width: 0px;
+	.card-header {
+		background: 0 0;
+		border: none;
+		padding: 0px;
+	}
+	.card-body {
+		border: none;
+		padding: 0px;
+	}
 }
 .row {
-    div {
-        margin: 0px !important;
-    }
+	div {
+		margin: 0px !important;
+	}
 }
 .about {
-    margin-left: 10px;
-    padding: 40px;
-    border-right: 1px solid #dee2e6;
+	margin-left: 10px;
+	padding: 40px;
+	border-right: 1px solid #dee2e6;
 }
 .col.exp {
-    margin-left: 10px;
-    padding: 60px;
-    border-right: 1px solid #dee2e6;
-    border-right: none;
+	margin-left: 10px;
+	padding: 60px;
+	border-right: 1px solid #dee2e6;
+	border-right: none;
 }
 .row.about {
-    padding: 40px 0;
-    border-top: 1px solid #dee2e6;
-    border-bottom: 1px solid #dee2e6;
+	padding: 40px 0;
+	border-top: 1px solid #dee2e6;
+	border-bottom: 1px solid #dee2e6;
 }
 .row.splash {
-    position: relative;
-    height: 80vh;
-    min-height: 600px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #fff;
+	position: relative;
+	height: 80vh;
+	min-height: 600px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	color: #fff;
 }
 .card {
-    .row {
-        margin: 0px;
-        .col {
-            padding: 0px;
-        }
-    }
+	.row {
+		margin: 0px;
+		.col {
+			padding: 0px;
+		}
+	}
 }
 </style>
