@@ -33,7 +33,6 @@ import Vue from 'vue'
 
 export default Vue.extend({
 	name: 'IndexPage',
-
 	data() {
 		return {
 			isScrolled: false,
@@ -52,28 +51,28 @@ export default Vue.extend({
 		window.removeEventListener('scroll', this.handleScroll)
 	},
 	methods: {
-		handleScrollView(event) {
-			const target = event.target
-			// Determine which section is in view based on its offset from the top
-			const home = document.getElementById('home')
-			const about = document.getElementById('about')
-			const resume = document.getElementById('resume')
-			const contact = document.getElementById('contact')
-			if (this.isElementInViewport(home)) {
-				this.section = 'home'
-				console.log('section', 'home')
-			} else if (this.isElementInViewport(about)) {
-				this.section = 'about'
-				console.log('section', 'about')
-			} else if (this.isElementInViewport(resume)) {
-				// TODO: FIX never fires!
-				this.section = 'resume'
-				console.log('section', 'resume')
-			} else if (this.isElementInViewport(contact)) {
-				this.section = 'contact'
-				console.log('section', 'contact')
-			}
-		},
+		// handleScrollView(event) {
+		// 	const target = event.target
+		// 	// Determine which section is in view based on its offset from the top
+		// 	const home = document.getElementById('home')
+		// 	const about = document.getElementById('about')
+		// 	const resume = document.getElementById('resume')
+		// 	const contact = document.getElementById('contact')
+		// 	if (this.isElementInViewport(home)) {
+		// 		this.section = 'home'
+		// 		console.log('section', 'home')
+		// 	} else if (this.isElementInViewport(about)) {
+		// 		this.section = 'about'
+		// 		console.log('section', 'about')
+		// 	} else if (this.isElementInViewport(resume)) {
+		// 		// TODO: FIX never fires!
+		// 		this.section = 'resume'
+		// 		console.log('section', 'resume')
+		// 	} else if (this.isElementInViewport(contact)) {
+		// 		this.section = 'contact'
+		// 		console.log('section', 'contact')
+		// 	}
+		// },
 		isElementInViewport(el) {
 			const rect = el.getBoundingClientRect()
 			return (
@@ -83,8 +82,9 @@ export default Vue.extend({
 						document.documentElement.clientHeight)
 			)
 		},
-		handleScroll(event) {
-            // TODO: handleScrollView
+		handleScroll() {
+			// handleScroll(event) {
+			// TODO: handleScrollView
 			// this.handleScrollView(event)
 			const FadeStart = 400
 			const FadeEnd = 600
