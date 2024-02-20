@@ -99,66 +99,11 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.card .card-header {
-	background: 0 0;
-	border: none;
-}
-.progress-bar {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	color: #fff;
-	text-align: center;
-	white-space: nowrap;
-	background-color: #f85c70;
-	-webkit-transition: width 0.6s ease;
-	transition: width 0.6s ease;
-}
-.bg-danger {
-	background-color: #f85c70 !important;
-}
-.progress {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	height: 0.3rem;
-	overflow: hidden;
-	font-size: 0.75rem;
-	background-color: #eaf0fc;
-	border-radius: 0.25rem;
-}
-.section {
-	padding: 80px 0;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	overflow: hidden;
-	font-size: 0.75rem;
-	background-color: #eaf0fc;
-	border-radius: 0.25rem;
-}
 .hide {
 	display: none;
 }
 span.selected {
 	color: red;
-}
-.line {
-	display: block;
-	width: 25px;
-	height: 1.5px;
-	background-color: #f85c70;
 }
 .options {
 	cursor: pointer;

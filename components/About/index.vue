@@ -1,17 +1,18 @@
 <template lang="pug">
-.row.about(id="about")
-    .col-md-12.col-xl-4.about
-        WhoAmI
-    .col-md-6.col-xl-4.about
-        .card
-            .card-header.py-2
-                .mt-2 
-                    h2 Personal Info
-                    span.line
-            .card-body
-                Info
-    .col-md-6.col-xl-4.exp.about
-        Exp
+section(ref="about" id="about")
+	.row.about
+		.col-md-12.col-xl-4.about
+			WhoAmI
+		.col-md-6.col-xl-4.about
+			.card
+				.card-header.py-2
+					.mt-2 
+						h2 Personal Info
+						span.line
+				.card-body
+					Info
+		.col-md-6.col-xl-4.exp.about
+			Exp
 </template>
 
 <script>
@@ -63,16 +64,6 @@ export default Vue.extend({
 	padding: 40px 0;
 	border-top: 1px solid #dee2e6;
 	border-bottom: 1px solid #dee2e6;
-}
-.row.splash {
-	position: relative;
-	height: 80vh;
-	min-height: 600px;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	color: #fff;
 }
 .card {
 	.row {

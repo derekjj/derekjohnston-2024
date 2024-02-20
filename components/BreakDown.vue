@@ -1,5 +1,9 @@
 <template>
-	<section class="section row bg-dark text-center">
+	<section
+		id="break-down"
+		ref="break-down"
+		class="section row bg-dark text-center"
+	>
 		<div class="container-fluid">
 			<div class="row text-center">
 				<div class="col-md-6 col-lg-3">
@@ -334,9 +338,6 @@ export default Vue.extend({
 <style scoped>
 svg {
 	font-size: 65px;
-}
-.section {
-	padding: 80px 0;
 }
 .spinner {
 	font-size: 50px;

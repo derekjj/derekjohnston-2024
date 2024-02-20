@@ -19,5 +19,4 @@ export default Vue.extend({
 	},
 })
 </script>
-<!-- button.btn.btn-primary.btn-rounded -->
 <style scoped></style>

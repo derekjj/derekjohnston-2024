@@ -1,31 +1,33 @@
 <template lang="pug">            
-div.sticky-top
-    b-nav.navbar.navbar-expand-md.navbar-light.bg-white.affix(data-spy="affix" data-offset-top="510" toggleable="lg")
-        b-navbar-brand.d-sm-block.d-md-none
-            .h5.brand-title.text-center Derek Johnston
-            .brand-subtitle Full Stack / Mobile Developer
-        b-navbar-toggle.ml-auto(target="nav-collapse")
-        b-collapse(id="nav-collapse" is-nav)
-            b-navbar-nav
-                b-nav-item(href="#home" )
-                    div(:class="section === 'home' && 'active'"
-                        @click="section='home'") Home
-                b-nav-item(href="#about")
-                    div(:class="section === 'about' && 'active'" 
-                        @click="section='about'") About
-            b-navbar-nav.ml-auto.d-sm-none.d-md-block(:class="{ faded: isScrolled }")
-                img.brand-img(src="~/assets/me2.jpg" alt="Display Picture" v-if="!isScrolled"
-                    :style="{ opacity: calculateOpacity }")
-                .fadedContent(v-if="isScrolled")
-                    .h5.brand-title.text-center Derek Johnston
-                    .brand-subtitle Full Stack / Mobile Developer
-            b-navbar-nav.ml-auto
-                b-nav-item(href="#resume")
-                    div(:class="section === 'resume' && 'active'" 
-                    @click="section='resume'" right) Resume
-                b-nav-item(href="#contact")
-                    div(:class="section === 'contact' && 'active'" 
-                    @click="section='contact'" right) Contact
+.sticky-top
+	b-nav.navbar.navbar-expand-md.navbar-light.bg-white.affix(data-spy="affix" data-offset-top="510" toggleable="lg")
+		b-navbar-brand.d-sm-flex.d-md-none.row
+			img.brand-img.small(src="~/assets/me2.jpg" alt="Display Picture")
+			.col
+				.h5.brand-title Derek Johnston
+				.brand-subtitle Full Stack / Mobile Developer
+		b-navbar-toggle.ml-auto(target="nav-collapse")
+		b-collapse(id="nav-collapse" is-nav)
+			b-navbar-nav
+				b-nav-item(href="#home" )
+					div(:class="visibleSections.includes('home') && 'active'"
+						@click="section='home'") Home
+				b-nav-item(href="#about")
+					div(:class="visibleSections.includes('about') && 'active'" 
+						@click="section='about'") About
+			b-navbar-nav.ml-auto.d-sm-none.d-md-block(:class="{ faded: isScrolled }")
+				img.brand-img(src="~/assets/me2.jpg" alt="Display Picture" v-if="!isScrolled"
+					:style="{ opacity: calculateOpacity }")
+				.fadedContent(v-if="isScrolled")
+					.h5.brand-title.text-center Derek Johnston
+					.brand-subtitle Full Stack / Mobile Developer
+			b-navbar-nav.ml-auto
+				b-nav-item(href="#resume")
+					div(:class="visibleSections.includes('resume') && 'active'" 
+					@click="section='resume'" right) Resume
+				b-nav-item(href="#contact")
+					div(:class="visibleSections.includes('contact') && 'active'" 
+					@click="section='contact'" right) Contact
 </template>
 
 <script>
@@ -39,55 +41,57 @@ export default Vue.extend({
 			scrollPosition: 0,
 			calculateOpacity: '100%',
 			section: '',
+			sections: [],
+			intersectionObserver: null,
+			visibleSections: [],
 		}
 	},
 	mounted() {
 		// Attach a scroll event listener when the component is mounted
 		window.addEventListener('scroll', this.handleScroll)
-		this.section = window.location.hash.substr(1)
+		// this.section = window.location.hash.substr(1)
+
+		this.loadSections()
+		this.sections.forEach((section) => {
+			this.intersectionObserver.observe(section)
+		})
 	},
 	beforeDestroy() {
 		// Remove the scroll event listener when the component is destroyed to avoid memory leaks
 		window.removeEventListener('scroll', this.handleScroll)
+
+		this.sections.forEach((section) => {
+			this.intersectionObserver.unobserve(section)
+		})
+	},
+	created() {
+		this.intersectionObserver = new IntersectionObserver(
+			this.handleIntersection
+		)
 	},
 	methods: {
-		// handleScrollView(event) {
-		// 	const target = event.target
-		// 	// Determine which section is in view based on its offset from the top
-		// 	const home = document.getElementById('home')
-		// 	const about = document.getElementById('about')
-		// 	const resume = document.getElementById('resume')
-		// 	const contact = document.getElementById('contact')
-		// 	if (this.isElementInViewport(home)) {
-		// 		this.section = 'home'
-		// 		console.log('section', 'home')
-		// 	} else if (this.isElementInViewport(about)) {
-		// 		this.section = 'about'
-		// 		console.log('section', 'about')
-		// 	} else if (this.isElementInViewport(resume)) {
-		// 		// TODO: FIX never fires!
-		// 		this.section = 'resume'
-		// 		console.log('section', 'resume')
-		// 	} else if (this.isElementInViewport(contact)) {
-		// 		this.section = 'contact'
-		// 		console.log('section', 'contact')
-		// 	}
-		// },
-		isElementInViewport(el) {
-			const rect = el.getBoundingClientRect()
-			return (
-				rect.top >= 0 &&
-				rect.bottom <=
-					(window.innerHeight ||
-						document.documentElement.clientHeight)
-			)
+		loadSections() {
+			this.sections = Array.from(document.querySelectorAll('section'))
+		},
+		handleIntersection(entries) {
+			const visible = this.visibleSections
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					// Perform actions when section enters the viewport
+					visible.push(entry.target.id)
+				} else {
+					const index = visible.indexOf(entry.target.id)
+					if (index > -1) {
+						// only splice array when item is found
+						visible.splice(index, 1)
+					}
+				}
+			})
+			this.visibleSections = visible
 		},
 		handleScroll() {
-			// handleScroll(event) {
-			// TODO: handleScrollView
-			// this.handleScrollView(event)
-			const FadeStart = 400
-			const FadeEnd = 600
+			const FadeStart = window.innerHeight * 0.7
+			const FadeEnd = window.innerHeight
 			// Update the scrollPosition data property when the page is scrolled
 			const scrollPosition =
 				window.scrollY || document.documentElement.scrollTop
@@ -99,14 +103,17 @@ export default Vue.extend({
 						100 +
 					'%'
 			}
-			if (scrollPosition > FadeEnd) {
+
+			// in scrolling area
+			if (scrollPosition >= FadeEnd) {
 				if (!this.isScrolled) {
 					this.isScrolled = true
+				} else {
+					this.calculateOpacity = scrollPosition - FadeEnd
 				}
-				this.calculateOpacity = scrollPosition - FadeEnd
 			} else if (this.isScrolled) {
+				// if out
 				this.isScrolled = false
-			} else if (scrollPosition < FadeStart) {
 				this.calculateOpacity = '100%'
 			}
 		},
@@ -121,7 +128,14 @@ export default Vue.extend({
 	box-shadow: 0 5px 1px rgba(128, 128, 128, 0.13);
 	width: 170px;
 	border: 10px solid #fff;
-	/* transition: 0.5s !important; */
+}
+.brand-img.small {
+	border-radius: 50%;
+	box-shadow: none;
+	width: auto;
+	height: 50px;
+	border: 0px;
+	margin-left: 10px;
 }
 .faded {
 	position: relative;
@@ -134,11 +148,15 @@ export default Vue.extend({
 	align-items: center;
 	color: black;
 }
+.brand-title {
+	margin-bottom: 0px;
+}
 .brand-subtitle {
-	font-size: 13px;
+	font-size: 12px;
 	color: #888;
 }
 .navbar {
+	display: flex;
 	box-shadow: 0 1px 10px rgba(54, 54, 54, 0.18);
 	-webkit-box-shadow: 0 1px 10px rgba(54, 54, 54, 0.18);
 	margin-left: -15px;
