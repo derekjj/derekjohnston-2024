@@ -1,11 +1,11 @@
 <template lang="pug">            
 .sticky-top
 	b-nav.navbar.navbar-expand-md.navbar-light.bg-white.affix(data-spy="affix" data-offset-top="510" toggleable="lg")
-		b-navbar-brand.d-sm-flex.d-md-none.row
+		b-navbar-brand.d-flex.d-md-none.row
 			img.brand-img.small(src="~/assets/me2.jpg" alt="Display Picture")
 			.col
 				.h5.brand-title Derek Johnston
-				.brand-subtitle Full Stack / Mobile Developer
+				.brand-subtitle Full Stack / Mobile Developer 
 		b-navbar-toggle.ml-auto(target="nav-collapse")
 		b-collapse(id="nav-collapse" is-nav)
 			b-navbar-nav
