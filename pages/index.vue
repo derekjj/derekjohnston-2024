@@ -139,8 +139,6 @@ html {
 .selected {
 	div {
 		background-color: #ccc;
-		/* border-radius: 3%; */
-		margin-top: 10px;
 	}
 	hr {
 		background-color: unset;

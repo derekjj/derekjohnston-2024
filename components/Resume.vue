@@ -18,8 +18,10 @@ section(id="resume" ref="resume")
 							div(v-for="(ed,i) in eds") 
 								h6.title.text-danger {{ ed.dates }}
 								.row.py-2
-									.col-7.px-0 {{ed.title}}
-									.col-5.px-0.text-right {{ed.school}}
+									.col-7.px-0
+										b {{ed.title}}
+									.col-5.px-0.text-right
+										b {{ed.school}}
 								p.subtitle.text-justify {{ ed.description }}
 								hr(v-if="i < eds.length - 1")
 					.card.mt-2 

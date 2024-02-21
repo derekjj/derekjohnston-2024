@@ -5,12 +5,14 @@
       h4 Expertise
       span.line
   .card-body
-    div.p-2(v-for="(exp,i) in exps" :class="selectedJobs >= i && 'selected'" @click="setSelectedJobs(i)") 
-      div
+    div(v-for="(exp,i) in exps" :class="selectedJobs >= i && 'selected'" @click="setSelectedJobs(i)") 
+      div.p-2
         h6.title.text-danger {{ getMonthDay(exp.startDate) }} - {{ getMonthDay(exp.endDate) }}
         .row 
-          .col {{exp.title}}
-          .col.text-right {{ exp.employer }}
+          .col
+            b {{exp.title}}
+          .col.text-right
+            b {{ exp.employer }}
         p.subtitle.text-justify {{ exp.description }} 
       hr(v-if="i < exps.length - 1")
 </template>
