@@ -25,11 +25,9 @@ export default Vue.extend({
 			volunteers: json.volunteers,
 		}
 	},
-	watch: {
-		// selectedJobs(a, b) {
-		//     console.log('a', a)
-		//     console.log('b', b)
-		// },
+	watch: {},
+	mounted() {
+		// console.log('volunteers.length', volunteers.length)
 	},
 	methods: {
 		getMonthDay(date) {

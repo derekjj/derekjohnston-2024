@@ -16,22 +16,23 @@
             span.-webkit-linear-gradient
     .card-body.pb-2
         div(v-for="(value, index) in sortedSkillExperience" :key="index")
-            h6(:class="index > 20 && hideSkills && 'hide'") {{ value.skill }}
+            h6(:class="index > MIN_SKILLS && hideSkills && 'hide'") {{ value.skill }}
                 .progress.mb-3 
-                    .progress-bar.bg-danger(role="progressbar" :style="{width:(value.years/sortedSkillExperience[0].years)*100 + '%'}" :title="value.years.toFixed(1) + ' years'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
-        .col.text-center(v-on:click="hideSkills = !hideSkills" v-if="sortedSkillExperience.length > 20")
+                    .progress-bar.bg-danger(role="progressbar" :style="{width:(value?.years/sortedSkillExperience[0]?.years)*100 + '%'}" :title="value.years.toFixed(1) + ' years'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
+        .col.text-center(v-on:click="hideSkills = !hideSkills" v-if="sortedSkillExperience.length > MIN_SKILLS")
             fa(:icon="hideSkills ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'")
 </template>
 <script>
 import Vue from 'vue'
 import json from '@/assets/about.json'
+const MIN_SKILLS = 25
 const ALL_JOBS = -1
 export default Vue.extend({
 	name: 'SkillsComponent',
 	props: {
 		setSelectedJobs: {
 			type: Function,
-			default: -1,
+			default: () => {},
 		},
 		selectedJobs: {
 			type: Number,
@@ -41,7 +42,7 @@ export default Vue.extend({
 	data() {
 		return {
 			ALL_JOBS,
-			// selectedJobs: ALL_JOBS,
+			MIN_SKILLS,
 			hideSkills: true,
 			exps: json.exps,
 		}
@@ -53,17 +54,19 @@ export default Vue.extend({
 				this.selectedJobs === ALL_JOBS
 					? this.exps.length
 					: this.selectedJobs + 1
-			for (let i = 0; i < loopSize; i++) {
-				const durationYears = this.calculateYears(
-					this.exps[i].startDate,
-					this.exps[i].endDate
-				)
-				this.exps[i].skills.forEach((skill) => {
-					if (!skillExperience[skill]) {
-						skillExperience[skill] = 0
-					}
-					skillExperience[skill] += durationYears
-				})
+			if (loopSize > 0) {
+				for (let i = 0; i < loopSize; i++) {
+					const durationYears = this.calculateYears(
+						this.exps[i].startDate,
+						this.exps[i].endDate
+					)
+					this.exps[i].skills.forEach((skill) => {
+						if (!skillExperience[skill]) {
+							skillExperience[skill] = 0
+						}
+						skillExperience[skill] += durationYears
+					})
+				}
 			}
 			return skillExperience
 		},
@@ -81,10 +84,8 @@ export default Vue.extend({
 		},
 	},
 	watch: {
-		selectedJobs(a) {
-			// console.log('bb', b)
-			// console.log('aa', a)
-			this.setSelectedJobs(a)
+		selectedJobs(jobs) {
+			this.setSelectedJobs(jobs)
 		},
 	},
 	mounted() {},

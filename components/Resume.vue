@@ -6,9 +6,7 @@ section(id="resume" ref="resume")
 				span.text-danger My
 				|  Resume
 			.row
-				.col-md-6.col-lg-4
-					Work(:selectedJobs="selectedJobs" :setSelectedJobs="setSelectedJobs")
-				.col-md-6.col-lg-4
+				.col-lg-4 
 					.card 
 						.card-header 
 							.mt-2 
@@ -47,7 +45,9 @@ section(id="resume" ref="resume")
 					.row.py-2
 						.col.text-center
 							Volunteer
-				.col-lg-4 
+				.col-md-6.col-lg-4
+					Work(:selectedJobs="selectedJobs" :setSelectedJobs="setSelectedJobs")
+				.col-md-6.col-lg-4
 					Skills(:setSelectedJobs="setSelectedJobs" :selectedJobs="selectedJobs")
 </template>
 <script>
@@ -64,10 +64,6 @@ export default Vue.extend({
 		}
 	},
 	watch: {
-		// selectedJobs(a, b) {
-		//     console.log('a', a)
-		//     console.log('b', b)
-		// },
 	},
 	methods: {
 		getMonthDay(date) {

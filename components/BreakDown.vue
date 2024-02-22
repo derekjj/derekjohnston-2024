@@ -17,7 +17,7 @@
 						</div>
 						<div class="col-7 text-left py-3">
 							<h1 class="text-danger font-weight-bold font40">
-								{{ sortedSkillExperience[0].years.toFixed(1) }}
+								{{ sortedSkillExperience[0]?.years.toFixed(1) }}
 							</h1>
 							<p class="text-light mb-1">Years Experience</p>
 						</div>
@@ -151,7 +151,7 @@ export default Vue.extend({
 	computed: {
 		skillExperience() {
 			const skillExperience = {}
-			this.exps.forEach((exp) => {
+			this.exps?.forEach((exp) => {
 				const durationYears = this.calculateYears(
 					exp.startDate,
 					exp.endDate
@@ -170,7 +170,7 @@ export default Vue.extend({
 				this.github.projectCount + this.gitlab.projectCount
 			const numberOfCommits =
 				this.github.commitCount + this.gitlab.commitCount
-			const yearsOfExperience = this.sortedSkillExperience[0].years
+			const yearsOfExperience = this.sortedSkillExperience[0]?.years
 			// Define arbitrary coefficients
 			const kA = 1.5 // Coffee consumption per project
 			const kB = 1.2 // Coffee consumption per commit

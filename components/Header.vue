@@ -49,7 +49,6 @@ export default Vue.extend({
 	mounted() {
 		// Attach a scroll event listener when the component is mounted
 		window.addEventListener('scroll', this.handleScroll)
-		// this.section = window.location.hash.substr(1)
 
 		this.loadSections()
 		this.sections.forEach((section) => {
