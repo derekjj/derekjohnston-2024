@@ -27,24 +27,7 @@ export default Vue.extend({
 	data() {
 		return {
 			exps: json.exps,
-			roles: [
-				{
-					icon: 'fa-solid fa-cubes-stacked',
-					title: 'Lead Full-Stack Developer',
-				},
-				{
-					icon: 'fa-solid fa-laptop',
-					title: 'Frontend Developer',
-				},
-				{
-					icon: 'fa-solid fa-code',
-					title: 'Backend Developer',
-				},
-				{
-					icon: 'fa-solid fa-mobile-screen',
-					title: 'Mobile Developer',
-				},
-			],
+			roles: json.roles,
 		}
 	},
 	methods: {
