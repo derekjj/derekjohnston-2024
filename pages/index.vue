@@ -6,9 +6,9 @@
 				.container
 					Socials.p-2
 					.header-content
-						h4.header-subtitle Hello, I am
-						h1.header-title Derek Johnston
-						h6.header-mono Lead Fullstack Developer (Generalist)
+						h4.header-subtitle {{ about.intro }}
+						h1.header-title {{ about.firstName }} {{ about.lastName }}
+						h6.header-mono {{ about.title }}
 						br
 						ResumeBtn
 	Header
@@ -24,11 +24,17 @@
 <script>
 import Vue from 'vue'
 import Info from '~/components/Contact/Info'
+import jsonAbout from '@/assets/about.json'
 
 export default Vue.extend({
 	name: 'IndexPage',
 	components: {
 		Info,
+	},
+	data() {
+		return {
+			about: jsonAbout.about,
+		}
 	},
 })
 </script>
@@ -42,6 +48,18 @@ export default Vue.extend({
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	color: #fff;
+}
+.header-content {
+	button {
+		color: #fff;
+		background-color: #f63750;
+		border-color: #fff;
+	}
+	button:hover {
+		color: #fff;
+		background-color: #f63750;
+		border-color: #f62b45;
+	}
 }
 </style>
 

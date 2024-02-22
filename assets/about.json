@@ -1,4 +1,18 @@
 {
+	"about": {
+		"intro": "Hello, I am",
+		"firstName": "Derek",
+		"lastName": "Johnston",
+		"title": "Lead Fullstack Developer (Generalist)"
+	},
+	"eds": [
+		{
+			"school": "Durham College",
+			"title": "Computer Programmer Analyst",
+			"dates": "2018",
+			"description": "I hold a three-year advanced diploma in Computer Programmer Analyst, with my final project focusing on leading a partnership to develop a mobile communication application for verbally limited individuals. This project utilized Xamarin for its cross-platform compatibility. Throughout the program, I gained proficiency in various technologies including PHP, ASP, Java, COBOL, SQL, MySQL, C#, C++, Visual Basic, QBasic, VISIO, Ubuntu, MS PowerPoint, Dreamweaver, MS FrontPage, phpMyAdmin, MS Project, MS Access, Android Studio, MS Excel, Visual Studio, and MS Word."
+		}
+	],
 	"exps": [
 		{
 			"startDate": "Sat May 01 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
@@ -107,6 +121,64 @@
 				"Node.js",
 				"JavaScript"
 			]
+		}
+	],
+	"volunteers": [
+		{
+			"startDate": "Sat Nov 01 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
+			"endDate": "",
+			"icon": "fa-solid fa-cubes-stacked",
+			"employer": "Virtual Coffee",
+			"title": "Room Leader",
+			"description": "Science and Technology",
+			"roles": [],
+			"skills": []
+		},
+		{
+			"startDate": "Sun Mar 01 2023 00:00:00 GMT-0500 (Eastern Standard Time)",
+			"endDate": "",
+			"icon": "fa-solid fa-laptop",
+			"employer": "Virtual Coffee",
+			"title": "Community member",
+			"description": "Science and Technology",
+			"roles": ["Frontend Developer", "Mobile Developer"],
+			"skills": []
+		},
+		{
+			"startDate": "Sun Apr 01 2020 00:00:00 GMT-0500 (Eastern Standard Time)",
+			"endDate": "Sun May 01 2020 00:00:00 GMT-0400 (Eastern Daylight Time)",
+			"employer": "Crown International",
+			"title": "Frontend Developer",
+			"description": "Science and Technology",
+			"roles": [],
+			"skills": []
+		},
+		{
+			"startDate": "Mon Mar 01 2020 00:00:00 GMT-0400 (Eastern Daylight Time)",
+			"endDate": "Mon Sep 01 2020 00:00:00 GMT-0400 (Eastern Daylight Time)",
+			"employer": "Mintbean",
+			"title": "Hackathon Lead",
+			"description": "Science and Technology",
+			"roles": [],
+			"skills": []
+		}
+	],
+	"roles": [
+		{
+			"icon": "fa-solid fa-cubes-stacked",
+			"title": "Lead Full-Stack Developer"
+		},
+		{
+			"icon": "fa-solid fa-laptop",
+			"title": "Frontend Developer"
+		},
+		{
+			"icon": "fa-solid fa-code",
+			"title": "Backend Developer"
+		},
+		{
+			"icon": "fa-solid fa-mobile-screen",
+			"title": "Mobile Developer"
 		}
 	]
 }

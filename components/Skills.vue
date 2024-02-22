@@ -24,7 +24,7 @@
 </template>
 <script>
 import Vue from 'vue'
-import json from '@/assets/experience.json'
+import json from '@/assets/about.json'
 const ALL_JOBS = -1
 export default Vue.extend({
 	name: 'SkillsComponent',

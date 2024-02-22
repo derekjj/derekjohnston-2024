@@ -123,7 +123,7 @@
 <script>
 import Vue from 'vue'
 import axios from 'axios'
-import json from '@/assets/experience.json'
+import json from '@/assets/about.json'
 
 export default Vue.extend({
 	name: 'IndexPage',

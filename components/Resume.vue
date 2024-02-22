@@ -52,15 +52,14 @@ section(id="resume" ref="resume")
 </template>
 <script>
 import Vue from 'vue'
-import json from '@/assets/experience.json'
-import jsonEd from '@/assets/education.json'
+import json from '@/assets/about.json'
 
 export default Vue.extend({
 	name: 'IndexPage',
 	data: function () {
 		return {
 			exps: json.exps,
-			eds: jsonEd.eds,
+			eds: json.eds,
 			selectedJobs: -1,
 		}
 	},
