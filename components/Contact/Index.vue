@@ -45,6 +45,7 @@ export default Vue.extend({
 	},
 	head() {
 		const key = process.env.TOKEN_GOOGLE
+		// white list over at https://console.cloud.google.com/apis/credentials?project=derekjohnston
 		return (
 			!window.google && {
 				script: [
