@@ -16,7 +16,7 @@
 </template>
 <script>
 import Vue from 'vue'
-import json from '@/assets/volunteer.json'
+import json from '@/assets/about.json'
 
 export default Vue.extend({
 	name: 'IndexPage',
