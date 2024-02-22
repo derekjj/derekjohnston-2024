@@ -63,8 +63,7 @@ export default Vue.extend({
 			selectedJobs: -1,
 		}
 	},
-	watch: {
-	},
+	watch: {},
 	methods: {
 		getMonthDay(date) {
 			const dateObject = new Date(date)
