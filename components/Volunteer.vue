@@ -5,14 +5,14 @@
 			h4 Volunteer
 			span.line
 	.card-body
-		div.p-2(v-for="(volunteer,i) in volunteers" @click="selectedJobs = i") 
+		div.p-2(v-for="(volunteer,i) in volunteers" v-if="volunteers.length > 0" @click="selectedJobs = i") 
 			div
 				h6.title.text-danger {{ getMonthDay(volunteer.startDate) }} - {{ getMonthDay(volunteer.endDate) }}
 				b.row 
 					.col {{volunteer.title}}
 					.col.text-right {{ volunteer.employer }}
 				p.subtitle.text-justify {{ volunteer.description }} 
-		hr(v-if="i < volunteers.length - 1")
+			hr(v-if="i < volunteers.length - 1")
 </template>
 <script>
 import Vue from 'vue'
