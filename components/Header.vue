@@ -74,10 +74,11 @@ export default Vue.extend({
 		},
 		handleIntersection(entries) {
 			const visible = this.visibleSections
+			console.log('this.visibleSections', this.visibleSections)
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					// Perform actions when section enters the viewport
-					console.log('entry.isIntersecting', entry.isIntersecting)
+					console.log('entry.isIntersecting', entry.target.id)
 					visible.push(entry.target.id)
 				} else {
 					const index = visible.indexOf(entry.target.id)
