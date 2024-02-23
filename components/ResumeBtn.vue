@@ -1,7 +1,7 @@
 <template lang="pug">
 button.btn.btn-outline-danger(@click="openPDF")
     fa(:icon="['fas', 'print']")
-    |  Download my CSV 
+    |  Download my CV 
 </template>
 
 <script>
