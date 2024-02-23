@@ -49,9 +49,6 @@ export default Vue.extend({
 	mounted() {
 		// Attach a scroll event listener when the component is mounted
 		window.addEventListener('scroll', this.handleScroll)
-		this.intersectionObserver = new IntersectionObserver(
-			this.handleIntersection
-		)
 
 		this.loadSections()
 		this.sections.forEach((section) => {
@@ -66,7 +63,11 @@ export default Vue.extend({
 			this.intersectionObserver.unobserve(section)
 		})
 	},
-	created() {},
+	created() {
+		this.intersectionObserver = new IntersectionObserver(
+			this.handleIntersection
+		)
+	},
 	methods: {
 		loadSections() {
 			this.sections = Array.from(document.querySelectorAll('section'))
