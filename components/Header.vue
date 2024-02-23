@@ -66,8 +66,7 @@ export default Vue.extend({
 			this.intersectionObserver.unobserve(section)
 		})
 	},
-	created() {
-	},
+	created() {},
 	methods: {
 		loadSections() {
 			this.sections = Array.from(document.querySelectorAll('section'))
