@@ -50,9 +50,12 @@ export default Vue.extend({
 		// Attach a scroll event listener when the component is mounted
 		window.addEventListener('scroll', this.handleScroll)
 
-		this.loadSections()
-		this.sections.forEach((section) => {
-			this.intersectionObserver.observe(section)
+		// Use nextTick to ensure that the DOM has been updated
+		this.$nextTick(() => {
+			this.loadSections()
+			this.sections.forEach((section) => {
+				this.intersectionObserver.observe(section)
+			})
 		})
 	},
 	beforeDestroy() {
