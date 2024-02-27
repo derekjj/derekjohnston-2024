@@ -51,12 +51,7 @@ export default Vue.extend({
 		window.addEventListener('scroll', this.handleScroll)
 
 		// Use nextTick to ensure that the DOM has been updated
-		this.$nextTick(() => {
-			this.loadSections()
-			this.sections.forEach((section) => {
-				this.intersectionObserver.observe(section)
-			})
-		})
+		this.loadSections()
 	},
 	beforeDestroy() {
 		// Remove the scroll event listener when the component is destroyed to avoid memory leaks
@@ -71,18 +66,21 @@ export default Vue.extend({
 			this.handleIntersection
 		)
 	},
+	updated() {},
 	methods: {
 		loadSections() {
-			this.sections = Array.from(document.querySelectorAll('section'))
+			this.$nextTick(() => {
+				this.sections = Array.from(document.querySelectorAll('section'))
+				this.sections.forEach((section) => {
+					this.intersectionObserver.observe(section)
+				})
+			})
 		},
 		handleIntersection(entries) {
 			const visible = this.visibleSections
-			console.log('this.visibleSections', this.visibleSections)
-			console.log('this.sections', this.sections)
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					// Perform actions when section enters the viewport
-					console.log('entry.isIntersecting', entry.target.id)
 					visible.push(entry.target.id)
 				} else {
 					const index = visible.indexOf(entry.target.id)
