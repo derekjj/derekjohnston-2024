@@ -1,18 +1,17 @@
 <template lang="pug">
-section(ref="about" id="about")
-	.row.about
-		.col-md-12.col-xl-4.about
-			WhoAmI
-		.col-md-6.col-xl-4.about
-			.card
-				.card-header.py-2
-					.mt-2 
-						h2 Personal Info
-						span.line
-				.card-body
-					Info
-		.col-md-6.col-xl-4.exp.about
-			Exp
+.row.about
+	.col-md-12.col-xl-4.about
+		WhoAmI
+	.col-md-6.col-xl-4.about
+		.card
+			.card-header.py-2
+				.mt-2 
+					h2 Personal Info
+					span.line
+			.card-body
+				Info
+	.col-md-6.col-xl-4.exp.about
+		Exp
 </template>
 
 <script>

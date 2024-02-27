@@ -12,13 +12,15 @@
 						br
 						ResumeBtn
 	Header
-	About
+	section(ref="about" id="about")
+		About
 	section(id="resume" ref="resume")
 		Resume
 	// TODO: Portfolio
 	//- Portfolio
 	BreakDown
-	Contact
+	section(id="contact" ref="contact")
+		Contact
 	//- Testing
 </template>
 

@@ -1,38 +1,37 @@
 <template lang="pug">
-section(id="contact" ref="contact")
-	.row.contact
-		.map 
-			iframe(
-				width="100%"
-				height="100%"
-				style="border: 0"
-				loading="lazy"
-				allowfullscreen
-				referrerpolicy="no-referrer-when-downgrade"
-				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDpRStcC8FVyAC3QE43Yd4q3m_ucJaQxh8&q=Durham+Region,Ontario")
-		.container
-			.row 
-				.col-lg-8 
-					.contact-form-card 
-						h4.contact-title
-							| Send a message
-						form(action="https://formspree.io/f/derek@derekjohnston.ca" method="post")
-							.form-group
-								input.form-control(type="text" id="name" name="name" placeholder="Name *" required)
-							.form-group 
-								input.form-control(type="email" id="email" name="email" placeholder="Email *" required)
-							.form-group 
-								input.form-control(type="text" id="subject" name="subject" placeholder="Subject *" required)
-							.form-group
-								textarea.form-control(placeholder="Message *" id="message" name="message" rows="7" required)
-							.form-group
-								button.btn.btn-primary(type="submit") 
-									| Send Message 
-				.col-lg-4
-					.contact-info-card 
-						h4.contact-title
-							| Get in touch 
-						Info(:location="false")
+.row.contact
+	.map 
+		iframe(
+			width="100%"
+			height="100%"
+			style="border: 0"
+			loading="lazy"
+			allowfullscreen
+			referrerpolicy="no-referrer-when-downgrade"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDpRStcC8FVyAC3QE43Yd4q3m_ucJaQxh8&q=Durham+Region,Ontario")
+	.container
+		.row 
+			.col-lg-8 
+				.contact-form-card 
+					h4.contact-title
+						| Send a message
+					form(action="https://formspree.io/f/derek@derekjohnston.ca" method="post")
+						.form-group
+							input.form-control(type="text" id="name" name="name" placeholder="Name *" required)
+						.form-group 
+							input.form-control(type="email" id="email" name="email" placeholder="Email *" required)
+						.form-group 
+							input.form-control(type="text" id="subject" name="subject" placeholder="Subject *" required)
+						.form-group
+							textarea.form-control(placeholder="Message *" id="message" name="message" rows="7" required)
+						.form-group
+							button.btn.btn-primary(type="submit") 
+								| Send Message 
+			.col-lg-4
+				.contact-info-card 
+					h4.contact-title
+						| Get in touch 
+					Info(:location="false")
 </template>
 <script>
 import Vue from 'vue'
