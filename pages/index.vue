@@ -17,8 +17,10 @@
 	section(id="resume" ref="resume")
 		Resume
 	// TODO: Portfolio
-	//- Portfolio
-	BreakDown
+	//- section(id="portfolio" ref="portfolio")
+	//- 	Portfolio
+	section(id="break-down" ref="break-down")
+		BreakDown
 	section(id="contact" ref="contact")
 		Contact
 	//- Testing

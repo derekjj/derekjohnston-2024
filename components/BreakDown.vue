@@ -1,123 +1,62 @@
-<template>
-	<section
-		id="break-down"
-		ref="break-down"
-		class="section row bg-dark text-center"
-	>
-		<div class="container-fluid">
-			<div class="row text-center">
-				<div class="col-md-6 col-lg-3">
-					<div class="row">
-						<div
-							class="col-5 text-right text-light border-right py-3"
-						>
-							<div class="m-auto">
-								<fa icon="fa-solid fa-clock" />
-							</div>
-						</div>
-						<div class="col-7 text-left py-3">
-							<h1 class="text-danger font-weight-bold font40">
-								{{ sortedSkillExperience[0]?.years.toFixed(1) }}
-							</h1>
-							<p class="text-light mb-1">Years Experience</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3">
-					<div class="row">
-						<div
-							class="col-5 text-right text-light border-right py-3"
-						>
-							<div class="m-auto">
-								<fa icon="fa-solid fa-code" />
-							</div>
-						</div>
-						<div class="col-7 text-left py-3">
-							<fa
-								v-if="loading"
-								icon="fa-solid fa-spinner"
-								class="spinner"
-							/>
-							<h1
-								v-else
-								class="text-danger font-weight-bold font40"
-							>
-								{{ github.projectCount + gitlab.projectCount }}
-							</h1>
-							<p class="text-light mb-1">Projects</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3">
-					<div class="row">
-						<div
-							class="col-5 text-right text-light border-right py-3"
-						>
-							<div class="m-auto">
-								<fa icon="fa-solid fa-code-commit" />
-							</div>
-						</div>
-						<div class="col-7 text-left py-3">
-							<fa
-								v-if="loading"
-								icon="fa-solid fa-spinner"
-								class="spinner"
-							/>
-							<h1
-								v-else
-								class="text-danger font-weight-bold font40"
-							>
-								{{ github.commitCount + gitlab.commitCount }}
-							</h1>
-							<p class="text-light mb-1">Commits</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3">
-					<div class="row">
-						<div
-							class="col-5 text-right text-light border-right py-3"
-						>
-							<div class="m-auto">
-								<fa icon="fa-solid fa-heart-pulse" />
-							</div>
-						</div>
-						<div class="col-7 text-left py-3">
-							<fa
-								v-if="loading"
-								icon="fa-solid fa-spinner"
-								class="spinner"
-							/>
-							<h1
-								v-else
-								class="text-danger font-weight-bold font40"
-							>
-								{{ estimatedCoffeeConsumption.toFixed(2) }}
-							</h1>
-							<p class="text-light mb-1">Coffee Drank</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col text-center text-white pt-2">
-					<small>
-						* Only for fun, calculated based on currently connected
-						public GitHub/GitLab repo's only *
-					</small>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col text-center text-white pt-2">
-					<small>
-						{{ error }}
-					</small>
-				</div>
-			</div>
-		</div>
-	</section>
+<template lang="pug">
+.section.row.bg-dark.text-center
+	.container-fluid
+		.row.text-center
+			.col-md-6.col-lg-3
+				.row
+					.col-5.text-right.text-light.border-right.py-3
+						.m-auto
+							fa(icon="fa-solid fa-clock")
+					.col-7.text-left.py-3
+						h1.text-danger.font-weight-bold.font40
+							| {{ sortedSkillExperience[0]?.years.toFixed(1) }}
+						p.text-light.mb-1 Years Experience
+			.col-md-6.col-lg-3
+				.row
+					.col-5.text-right.text-light.border-right.py-3
+						.m-auto
+							fa(icon="fa-solid fa-code")
+					.col-7.text-left.py-3
+						fa(v-if="loading"
+							icon="fa-solid fa-spinner"
+							class="spinner")
+						h1.text-danger.font-weight-bold.font40(v-else)
+							| {{ github.projectCount + gitlab.projectCount }}
+						p.text-light.mb-1 Projects
+			.col-md-6.col-lg-3
+				.row
+					.col-5.text-right.text-light.border-right.py-3
+						.m-auto
+							fa(icon="fa-solid fa-code-commit")
+					.col-7.text-left.py-3
+						fa(v-if="loading"
+							icon="fa-solid fa-spinner"
+							class="spinner")
+						h1.text-danger.font-weight-bold.font40(v-else)
+							| {{ github.commitCount + gitlab.commitCount }}
+						p.text-light.mb-1 Commits
+			.col-md-6.col-lg-3
+				.row
+					.col-5.text-right.text-light.border-right.py-3
+						.m-auto
+							fa(icon="fa-solid fa-heart-pulse")
+					.col-7.text-left.py-3
+						fa(v-if="loading"
+							icon="fa-solid fa-spinner"
+							class="spinner")
+						h1.text-danger.font-weight-bold.font40(v-else)
+							| {{ estimatedCoffeeConsumption.toFixed(2) }}
+						p.text-light.mb-1 Coffee Drank
+	.container-fluid
+		.row
+			.col.text-center.text-white.pt-2
+				small
+					| * Only for fun, calculated based on currently connected public GitHub/GitLab repo's only *
+		.row
+			.col.text-center.text-white.pt-2
+				small
+					| {{ error }}
+
 </template>
 
 <script>
