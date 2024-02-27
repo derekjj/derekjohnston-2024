@@ -1,54 +1,53 @@
 <template lang="pug">
-section(id="resume" ref="resume")
-	.row.section
-		.container 
-			h2.mb-5
-				span.text-danger My
-				|  Resume
-			.row
-				.col-lg-4 
-					.card 
-						.card-header 
-							.mt-2 
-								h4 Education
-								span.line
-						.card-body 
-							div(v-for="(ed,i) in eds") 
-								h6.title.text-danger {{ ed.dates }}
-								.row.py-2
-									.col-7.px-0
-										b {{ed.title}}
-									.col-5.px-0.text-right
-										b {{ed.school}}
-								p.subtitle.text-justify {{ ed.description }}
-								hr(v-if="i < eds.length - 1")
-					.card.mt-2 
-						.card-header 
-							.pull-left 
-								h4.mt-2 Languages
-								span.line
-						.card-body.pb-2 
-							.row
-								.col
-									h6 English
-								.col.text-right
-									|  (native)
-							//- .progress.mb-3 
-							//- 	.progress-bar.bg-danger(role="progressbar" style="width:80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
-							.row
-								.col
-									h6 French
-								.col.text-right
-									|  (actively learning)
-							//- .progress.mb-3 
-							//- 	.progress-bar.bg-danger(role="progressbar" style="width:30%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
-					.row.py-2
-						.col.text-center
-							Volunteer
-				.col-md-6.col-lg-4
-					Work(:selectedJobs="selectedJobs" :setSelectedJobs="setSelectedJobs")
-				.col-md-6.col-lg-4
-					Skills(:setSelectedJobs="setSelectedJobs" :selectedJobs="selectedJobs")
+.row.section
+	.container 
+		h2.mb-5
+			span.text-danger My
+			|  Resume
+		.row
+			.col-lg-4 
+				.card 
+					.card-header 
+						.mt-2 
+							h4 Education
+							span.line
+					.card-body 
+						div(v-for="(ed,i) in eds") 
+							h6.title.text-danger {{ ed.dates }}
+							.row.py-2
+								.col-7.px-0
+									b {{ed.title}}
+								.col-5.px-0.text-right
+									b {{ed.school}}
+							p.subtitle.text-justify {{ ed.description }}
+							hr(v-if="i < eds.length - 1")
+				.card.mt-2 
+					.card-header 
+						.pull-left 
+							h4.mt-2 Languages
+							span.line
+					.card-body.pb-2 
+						.row
+							.col
+								h6 English
+							.col.text-right
+								|  (native)
+						//- .progress.mb-3 
+						//- 	.progress-bar.bg-danger(role="progressbar" style="width:80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
+						.row
+							.col
+								h6 French
+							.col.text-right
+								|  (actively learning)
+						//- .progress.mb-3 
+						//- 	.progress-bar.bg-danger(role="progressbar" style="width:30%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
+				.row.py-2
+					.col.text-center
+						Volunteer
+			.col-md-6.col-lg-4
+				Work(:selectedJobs="selectedJobs" :setSelectedJobs="setSelectedJobs")
+			.col-md-6.col-lg-4
+				Skills(:setSelectedJobs="setSelectedJobs" :selectedJobs="selectedJobs")
 </template>
 <script>
 import Vue from 'vue'

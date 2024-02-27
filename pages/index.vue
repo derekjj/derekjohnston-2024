@@ -13,7 +13,8 @@
 						ResumeBtn
 	Header
 	About
-	Resume
+	section(id="resume" ref="resume")
+		Resume
 	// TODO: Portfolio
 	//- Portfolio
 	BreakDown
