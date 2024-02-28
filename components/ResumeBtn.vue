@@ -12,7 +12,7 @@ export default Vue.extend({
 	methods: {
 		openPDF() {
 			window.open(
-				'/Resume Derek Johnston Jan 2024 - full no phone.pdf',
+				'/Resume Derek Johnston -phone.pdf',
 				'_blank'
 			)
 		},
