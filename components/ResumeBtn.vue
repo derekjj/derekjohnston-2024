@@ -11,10 +11,7 @@ export default Vue.extend({
 	name: 'IndexPage',
 	methods: {
 		openPDF() {
-			window.open(
-				'/Resume Derek Johnston -phone.pdf',
-				'_blank'
-			)
+			window.open('/Resume Derek Johnston -phone.pdf', '_blank')
 		},
 	},
 })
