@@ -82,6 +82,7 @@ export default Vue.extend({
 				if (entry.isIntersecting) {
 					// Perform actions when section enters the viewport
 					visible.push(entry.target.id)
+					this.$ga.page(entry.target.id)
 				} else {
 					const index = visible.indexOf(entry.target.id)
 					if (index > -1) {
