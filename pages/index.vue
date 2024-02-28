@@ -157,7 +157,6 @@ html {
 	overflow: hidden;
 	font-size: 0.75rem;
 	background-color: #eaf0fc;
-	border-radius: 0.25rem;
 }
 .selected {
 	div {
