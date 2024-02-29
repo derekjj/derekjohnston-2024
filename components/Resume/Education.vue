@@ -1,13 +1,12 @@
 <template lang="pug">
 .card 
 	.card-header 
-		.mt-2 
-			h4 Education
-			span.line
+		h4 Education
+		span.line
 	.card-body 
 		div(v-for="(ed,i) in eds") 
 			h6.title.text-danger {{ ed.dates }}
-			.row.py-2
+			.row
 				.col-7.px-0
 					b {{ed.title}}
 				.col-5.px-0.text-right

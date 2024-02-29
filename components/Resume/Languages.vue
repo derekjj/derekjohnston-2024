@@ -1,5 +1,5 @@
 <template lang="pug">
-.card.mt-2 
+.card
 	.card-header 
 		h4.mt-2 Languages
 		span.line

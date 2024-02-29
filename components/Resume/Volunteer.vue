@@ -1,9 +1,8 @@
 <template lang="pug">
 .card.text-left
 	.card-header
-		.mt-2 
-			h4 Volunteer
-			span.line
+		h4 Volunteer
+		span.line
 	.card-body
 		div.p-2(v-for="(volunteer,i) in volunteers" v-if="volunteers.length > 0" @click="selectedJobs = i") 
 			div

@@ -6,11 +6,19 @@
 				span.text-danger My
 				|  Resume
 		.row
-			.col-md-12.col-lg-4
+			//- show only on lg
+			.col-lg-4.d-md-none.d-lg-block
 				Education
 				Languages
-			.col-md-12.col-lg-4.py-2.text-center
 				Volunteer
+
+			//- show only on smaller then lg
+			.col-md-6.d-lg-none
+				Education
+				Languages
+			.col-md-6.col-lg-4.d-lg-none
+				Volunteer
+
 			.col-md-6.col-lg-4
 				Work(:selectedJobs="selectedJobs" :setSelectedJobs="setSelectedJobs")
 			.col-md-6.col-lg-4
@@ -56,6 +64,9 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.card {
+	margin-top: 20px;
+}
 .section {
 	background-size: cover;
 	background-position: center;

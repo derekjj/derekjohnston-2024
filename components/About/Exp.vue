@@ -1,21 +1,20 @@
 <template lang="pug">
 .card
-    .card-header.py-2
-        .mt-2 
-            h2 My Experience
-            span.line
-    .card-body
-      .row.my-2(v-for="(role, index) in roles" :key="index")
-        .col-2.text-danger.pt-2.text-center
-          fa(:icon="role.icon")
-        .col-10
-          .row
-            .col-12 
-              h6 {{ role.title }}
-            .col-6.text-center(v-for="(exp, i) in exps" :key="i" v-if="exp.roles.includes(role.title)")
-              .subtitle {{ exp.employer }}
-        .col-12(v-if="index < roles.length - 1")
-          hr
+	.card-header.py-2
+		h2 My Experience
+		span.line
+	.card-body
+		.row.my-2(v-for="(role, index) in roles" :key="index")
+			.col-2.text-danger.pt-2.text-center
+				fa(:icon="role.icon")
+			.col-10
+				.row
+					.col-12 
+						h6 {{ role.title }}
+					.col-6.text-center(v-for="(exp, i) in exps" :key="i" v-if="exp.roles.includes(role.title)")
+						.subtitle {{ exp.employer }}
+				.row(v-if="index < roles.length - 1")
+					hr
 </template>
 
 <script>
