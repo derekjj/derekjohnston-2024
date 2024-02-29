@@ -67,7 +67,7 @@ export default {
 		checkDuplicatedScript: true,
 		disableScriptLoader: true,
 		debug: {
-		  sendHitTask: true
-		}
+			sendHitTask: true,
+		},
 	},
 }
