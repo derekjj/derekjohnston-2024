@@ -7,7 +7,7 @@
 				|  Resume
 		.row
 			//- show only on lg
-			.col-lg-4.d-md-none.d-lg-block
+			.d-none.col-lg-4.d-lg-block
 				Education
 				Languages
 				Volunteer
