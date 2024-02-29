@@ -27,7 +27,7 @@
 						.form-group
 							button.btn.btn-primary(type="submit") 
 								| Send Message 
-			.col-lg-4
+			.col-md-12.col-lg-4
 				.contact-info-card 
 					h4.contact-title
 						| Get in touch 
@@ -49,10 +49,7 @@ export default Vue.extend({
 			!window.google && {
 				script: [
 					{
-						hid: 'maps-googleapis',
 						src: `https://maps.googleapis.com/maps/api/js?libraries=places&key=${key}`,
-						defer: true,
-						callback: this.googleAutocompleteInit,
 					},
 				],
 			}
@@ -103,5 +100,9 @@ export default Vue.extend({
 	background: #f85c70;
 	display: block;
 	margin-top: 10px;
+}
+
+.container {
+	max-width: 1140px;
 }
 </style>
