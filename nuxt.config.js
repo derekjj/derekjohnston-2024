@@ -23,7 +23,7 @@ export default {
 		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 	},
 	// Global CSS: https://go.nuxtjs.dev/config-css
-	css: ['@fortawesome/fontawesome-svg-core/styles.css', '@assets/smooth.css'],
+	css: ['@fortawesome/fontawesome-svg-core/styles.css', '@assets/style.css'],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: [],
@@ -38,11 +38,6 @@ export default {
 		'@nuxtjs/fontawesome',
 		'@nuxtjs/google-analytics',
 	],
-	// fontawesome: {
-	//     icons: {
-	//         solid: ['facebook'],
-	//     },
-	// },
 	fontawesome: {
 		component: 'Fa',
 		suffix: false,
@@ -69,5 +64,10 @@ export default {
 	build: {},
 	googleAnalytics: {
 		id: 'G-DVVMCHPK3S',
+		checkDuplicatedScript: true,
+		disableScriptLoader: true,
+		debug: {
+		  sendHitTask: true
+		}
 	},
 }
