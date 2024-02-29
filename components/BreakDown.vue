@@ -141,6 +141,7 @@ export default Vue.extend({
 	},
 	methods: {
 		async getData() {
+			// TODO: update if out of date and if api not limit capped
 			const githubProjectCount = localStorage.getItem(
 				'github-project-count'
 			)
