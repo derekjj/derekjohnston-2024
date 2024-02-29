@@ -23,7 +23,7 @@ import Vue from 'vue'
 import json from '~/assets/about.json'
 
 export default Vue.extend({
-	name: 'IndexPage',
+	name: 'AboutExpComponent',
 	data() {
 		return {
 			exps: json.exps,

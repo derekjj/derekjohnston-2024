@@ -25,6 +25,9 @@
 				b-nav-item(href="#resume")
 					div(:class="visibleSections.includes('resume') && 'active'" 
 					@click="section='resume'" right) Resume
+				//- b-nav-item(href="#portfolio")
+				//- 	div(:class="visibleSections.includes('portfolio') && 'active'" 
+				//- 	@click="section='portfolio'" right) Portfolio
 				b-nav-item(href="#contact")
 					div(:class="visibleSections.includes('contact') && 'active'" 
 					@click="section='contact'" right) Contact
@@ -34,7 +37,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-	name: 'IndexPage',
+	name: 'HeaderComponent',
 	data() {
 		return {
 			isScrolled: false,
@@ -66,7 +69,6 @@ export default Vue.extend({
 			this.handleIntersection
 		)
 	},
-	updated() {},
 	methods: {
 		loadSections() {
 			this.$nextTick(() => {

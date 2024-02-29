@@ -1,20 +1,23 @@
 <template lang="pug">
 .card
-  .card-header
-    .mt-2 
-      h4 Expertise
-      span.line
-  .card-body
-    div(v-for="(exp,i) in exps" :class="selectedJobs >= i && 'selected'" @click="setSelectedJobs(i)") 
-      div.p-2
-        h6.title.text-danger {{ getMonthDay(exp.startDate) }} - {{ getMonthDay(exp.endDate) }}
-        .row 
-          .col
-            b {{exp.title}}
-          .col.text-right
-            b {{ exp.employer }}
-        p.subtitle.text-justify {{ exp.description }} 
-      hr(v-if="i < exps.length - 1")
+	.card-header
+			.row
+				.col 
+					h4 Expertise
+					span.line
+				.col.text-right
+					a(@click="setSelectedJobs(ALL_JOBS)") clear selected
+	.card-body
+		div(v-for="(exp,i) in exps" :class="selectedJobs >= i && 'selected'" @click="setSelectedJobs(i)") 
+			div.p-2
+				h6.title.text-danger {{ getMonthDay(exp.startDate) }} - {{ getMonthDay(exp.endDate) }}
+				.row 
+					.col
+						b {{exp.title}}
+					.col.text-right
+						b {{ exp.employer }}
+				p.subtitle.text-justify {{ exp.description }} 
+			hr(v-if="i < exps.length - 1")
 </template>
 <script>
 import Vue from 'vue'
@@ -22,7 +25,7 @@ import json from '@/assets/about.json'
 const ALL_JOBS = -1
 
 export default Vue.extend({
-	name: 'IndexPage',
+	name: 'ResumeWorkComponent',
 	props: {
 		setSelectedJobs: {
 			type: Function,
@@ -37,6 +40,7 @@ export default Vue.extend({
 		return {
 			exps: json.exps,
 			eds: json.eds,
+			ALL_JOBS,
 		}
 	},
 	methods: {

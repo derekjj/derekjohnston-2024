@@ -8,7 +8,7 @@ button.btn.btn-outline-danger(@click="openPDF")
 import Vue from 'vue'
 
 export default Vue.extend({
-	name: 'IndexPage',
+	name: 'ResumeButtonComponent',
 	methods: {
 		openPDF() {
 			window.open('/Resume Derek Johnston -phone.pdf', '_blank')

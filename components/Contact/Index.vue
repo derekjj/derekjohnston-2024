@@ -38,7 +38,7 @@ import Vue from 'vue'
 import Info from '~/components/Contact/Info'
 
 export default Vue.extend({
-	name: 'IndexPage',
+	name: 'ContactComponent',
 	components: {
 		Info,
 	},

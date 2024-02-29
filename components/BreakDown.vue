@@ -65,7 +65,7 @@ import axios from 'axios'
 import json from '@/assets/about.json'
 
 export default Vue.extend({
-	name: 'IndexPage',
+	name: 'BreakDownComponent',
 	data: function () {
 		return {
 			exps: json.exps,

@@ -21,7 +21,7 @@ import WhoAmI from '~/components/About/WhoAmI'
 import Exp from '~/components/About/Exp'
 
 export default Vue.extend({
-	name: 'IndexPage',
+	name: 'AboutComponent',
 	components: {
 		Info,
 		WhoAmI,

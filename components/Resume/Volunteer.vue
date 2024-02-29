@@ -19,15 +19,11 @@ import Vue from 'vue'
 import json from '@/assets/about.json'
 
 export default Vue.extend({
-	name: 'IndexPage',
+	name: 'ResumeVolunteerComponent',
 	data: function () {
 		return {
 			volunteers: json.volunteers,
 		}
-	},
-	watch: {},
-	mounted() {
-		// console.log('volunteers.length', volunteers.length)
 	},
 	methods: {
 		getMonthDay(date) {

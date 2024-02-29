@@ -1,0 +1,32 @@
+<template lang="pug">
+.card 
+	.card-header 
+		.mt-2 
+			h4 Education
+			span.line
+	.card-body 
+		div(v-for="(ed,i) in eds") 
+			h6.title.text-danger {{ ed.dates }}
+			.row.py-2
+				.col-7.px-0
+					b {{ed.title}}
+				.col-5.px-0.text-right
+					b {{ed.school}}
+			p.subtitle.text-justify {{ ed.description }}
+			hr(v-if="i < eds.length - 1")
+</template>
+<script>
+import Vue from 'vue'
+import json from '@/assets/about.json'
+
+export default Vue.extend({
+	name: 'ResumeComponent',
+	data() {
+		return {
+			eds: json.eds,
+		}
+	},
+})
+</script>
+
+<style scoped></style>

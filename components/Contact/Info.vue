@@ -1,7 +1,7 @@
 <template lang="pug">
 div
     .row(v-for="(data, index) in info" :key="index" v-if="data.type !== 'Location' || location")
-        .col-4 
+        .col-4.text-nowrap 
             b {{data.type}} : &nbsp;
         .col-8 {{data.data}}
     Socials
@@ -14,7 +14,7 @@ div
 import Vue from 'vue'
 
 export default Vue.extend({
-	name: 'IndexPage',
+	name: 'ContactInfoComponent',
 	props: {
 		location: {
 			type: Boolean,

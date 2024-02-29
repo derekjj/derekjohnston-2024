@@ -1,26 +1,26 @@
 <template lang="pug">
 .card 
-    .card-header 
-        .pull-left.row
-            .col 
-                h4.mt-2 Skills
-                span.line
-            .col.text-right
-              .row
-                .col.text-right # of jobs
-              .row
-                .col.text-right
-                  span.options(v-for="(exp, index) in exps" :class="selectedJobs === index && 'selected'")
-                    span(@click="setSelectedJobs(index)")  {{index+1}}
-                  span.options(:class="selectedJobs === ALL_JOBS && 'selected'" @click="setSelectedJobs(ALL_JOBS)")  all
-            span.-webkit-linear-gradient
-    .card-body.pb-2
-        div(v-for="(value, index) in sortedSkillExperience" :key="index")
-            h6(:class="index > MIN_SKILLS && hideSkills && 'hide'") {{ value.skill }}
-                .progress.mb-3 
-                    .progress-bar.bg-danger(role="progressbar" :style="{width:(value?.years/sortedSkillExperience[0]?.years)*100 + '%'}" :title="value.years.toFixed(1) + ' years'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
-        .col.text-center(v-on:click="hideSkills = !hideSkills" v-if="sortedSkillExperience.length - 1 > MIN_SKILLS")
-            fa(:icon="hideSkills ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'")
+	.card-header 
+		.row
+			.col 
+				h4.mt-2 Skills
+				span.line
+			.col.text-right
+				.row
+					.col.text-right # of jobs
+				.row
+					.col.text-right
+						span.options(v-for="(exp, index) in exps" :class="selectedJobs === index && 'selected'")
+							span(@click="setSelectedJobs(index)")  {{index+1}}
+						span.options(:class="selectedJobs === ALL_JOBS && 'selected'" @click="setSelectedJobs(ALL_JOBS)")  all
+			span.-webkit-linear-gradient
+	.card-body.pb-2
+		div(v-for="(value, index) in sortedSkillExperience" :key="index")
+			h6(:class="index > MIN_SKILLS && hideSkills && 'hide'") {{ value.skill }}
+				.progress.mb-3 
+					.progress-bar.bg-danger(role="progressbar" :style="{width:(value?.years/sortedSkillExperience[0]?.years)*100 + '%'}" :title="value.years.toFixed(1) + ' years'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
+		.col.text-center(v-on:click="hideSkills = !hideSkills" v-if="sortedSkillExperience.length - 1 > MIN_SKILLS")
+			fa(:icon="hideSkills ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'")
 </template>
 <script>
 import Vue from 'vue'
@@ -28,7 +28,7 @@ import json from '@/assets/about.json'
 const MIN_SKILLS = 25
 const ALL_JOBS = -1
 export default Vue.extend({
-	name: 'SkillsComponent',
+	name: 'ResumeSkillsComponent',
 	props: {
 		setSelectedJobs: {
 			type: Function,
@@ -81,11 +81,6 @@ export default Vue.extend({
 			// Sort the array based on years of experience
 			skillArray.sort((a, b) => b.years - a.years)
 			return skillArray
-		},
-	},
-	watch: {
-		selectedJobs(jobs) {
-			this.setSelectedJobs(jobs)
 		},
 	},
 	mounted() {},
