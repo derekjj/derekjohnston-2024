@@ -137,10 +137,32 @@ export default Vue.extend({
 		},
 	},
 	mounted() {
-		this.getData()
+		this.loadData()
 	},
 	methods: {
+		setCookie({ cname, cvalue, exdays }) {
+			const d = new Date()
+			d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
+			const expires = 'expires=' + d.toUTCString()
+			document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
+		},
 		async getData() {
+			this.loading = true
+			await this.getGitlab()
+			await this.getGithub()
+			localStorage.setItem(
+				'github-project-count',
+				this.github.projectCount
+			)
+			localStorage.setItem('github-commit-count', this.github.commitCount)
+			localStorage.setItem(
+				'gitlab-project-count',
+				this.gitlab.projectCount
+			)
+			localStorage.setItem('gitlab-commit-count', this.gitlab.commitCount)
+			this.loading = false
+		},
+		async loadData() {
 			// TODO: update if out of date and if api not limit capped
 			const githubProjectCount = localStorage.getItem(
 				'github-project-count'
@@ -154,37 +176,27 @@ export default Vue.extend({
 			const gitlabCommitCount = localStorage.getItem(
 				'gitlab-commit-count'
 			)
+			// if not data in local storage
 			if (
 				!githubProjectCount ||
 				!githubCommitCount ||
 				!gitlabProjectCount ||
 				!gitlabCommitCount
 			) {
-				this.loading = true
-				await this.getGitlab()
-				await this.getGithub()
-				localStorage.setItem(
-					'github-project-count',
-					this.github.projectCount
-				)
-				localStorage.setItem(
-					'github-commit-count',
-					this.github.commitCount
-				)
-				localStorage.setItem(
-					'gitlab-project-count',
-					this.gitlab.projectCount
-				)
-				localStorage.setItem(
-					'gitlab-commit-count',
-					this.gitlab.commitCount
-				)
-				this.loading = false
-			} else {
+				this.getData()
+			} else if (document.cookie.includes('with24hrs')) {
+				// if data is not style
 				this.github.projectCount = parseInt(githubProjectCount)
 				this.github.commitCount = parseInt(githubCommitCount)
 				this.gitlab.projectCount = parseInt(gitlabProjectCount)
 				this.gitlab.commitCount = parseInt(gitlabCommitCount)
+			} else {
+				await this.getData()
+				await this.setCookie({
+					cname: 'with24hrs',
+					cvalue: true,
+					exdays: 1,
+				})
 			}
 		},
 		async getGitlab() {
