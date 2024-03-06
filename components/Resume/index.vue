@@ -1,28 +1,33 @@
 <template lang="pug">
 .row.section( :style="{ backgroundImage: 'linear-gradient(to top,rgba(0,0,0,.4),rgba(0,0,0,.4)),url(' + require('@/assets/tech2-bg.jpg') + ')' }")
 	.container
-		.row
+		.row.mx-3
 			h2.mb-5.ml-3.text-white
 				span.text-danger My
 				|  Resume
-		.row
-			//- show only on lg
+		.row.mx-3
+			//- show only on lg or larger
 			.d-none.col-lg-4.d-lg-block
-				Education
-				Languages
-				Volunteer
+				FadeIn(:rate="randomRate(5)")
+					Education
+					Languages
+					Volunteer
 
 			//- show only on smaller then lg
 			.col-md-6.d-lg-none
-				Education
-				Languages
+				FadeIn(:rate="randomRate(3)")
+					Education
+					Languages
 			.col-md-6.col-lg-4.d-lg-none
-				Volunteer
+				FadeIn(:rate="randomRate(4)")
+					Volunteer
 
 			.col-md-6.col-lg-4
-				Work(:selectedJobs="selectedJobs" :setSelectedJobs="setSelectedJobs")
+				FadeIn(:rate="randomRate(2)")
+					Work(:selectedJobs="selectedJobs" :setSelectedJobs="setSelectedJobs")
 			.col-md-6.col-lg-4
-				Skills(:setSelectedJobs="setSelectedJobs" :selectedJobs="selectedJobs")
+				FadeIn(:rate="randomRate(3)")
+					Skills(:setSelectedJobs="setSelectedJobs" :selectedJobs="selectedJobs")
 </template>
 <script>
 import Vue from 'vue'
@@ -58,6 +63,12 @@ export default Vue.extend({
 		},
 		setSelectedJobs(jobs) {
 			this.selectedJobs = jobs
+		},
+		randomRate(num) {
+			const randomNum =
+				Math.floor(Math.random() * (9 - 4 + num + 1)) + num
+
+			return '0.' + randomNum + 's'
 		},
 	},
 })
