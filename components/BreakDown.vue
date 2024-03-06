@@ -150,6 +150,8 @@ export default Vue.extend({
 			this.loading = true
 			await this.getGitlab()
 			await this.getGithub()
+
+			// TODO: only update when new api data (don't zero out)
 			localStorage.setItem(
 				'github-project-count',
 				this.github.projectCount
@@ -163,7 +165,6 @@ export default Vue.extend({
 			this.loading = false
 		},
 		async loadData() {
-			// TODO: update if out of date and if api not limit capped
 			const githubProjectCount = localStorage.getItem(
 				'github-project-count'
 			)
@@ -185,7 +186,7 @@ export default Vue.extend({
 			) {
 				this.getData()
 			} else if (document.cookie.includes('with24hrs')) {
-				// if data is not style
+				// if data is not stale
 				this.github.projectCount = parseInt(githubProjectCount)
 				this.github.commitCount = parseInt(githubCommitCount)
 				this.gitlab.projectCount = parseInt(gitlabProjectCount)
