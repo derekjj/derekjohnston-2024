@@ -6,9 +6,10 @@
 					h4 Expertise
 					span.line
 				.col.text-right
-					a(@click="setSelectedJobs(ALL_JOBS)") clear selected
+					a(@click="clearSelectedJobs()")
+						span.clear clear selected
 	.card-body
-		div(v-for="(exp,i) in exps" :class="selectedJobs >= i && 'selected'" @click="setSelectedJobs(i)") 
+		div(v-for="(exp,i) in exps" :class="selectedJobs.includes(i) && 'selected'" @click="toggleSelectedJob(i)") 
 			div.p-2
 				h6.title.text-danger {{ getMonthDay(exp.startDate) }} - {{ getMonthDay(exp.endDate) }}
 				.row 
@@ -22,18 +23,22 @@
 <script>
 import Vue from 'vue'
 import json from '@/assets/about.json'
-const ALL_JOBS = -1
+const ALL_JOBS = []
 
 export default Vue.extend({
 	name: 'ResumeWorkComponent',
 	props: {
-		setSelectedJobs: {
+		toggleSelectedJob: {
 			type: Function,
-			default: -1,
+			default: () => {},
+		},
+		clearSelectedJobs: {
+			type: Function,
+			default: () => {},
 		},
 		selectedJobs: {
-			type: Number,
-			default: ALL_JOBS,
+			type: Array,
+			default: () => [],
 		},
 	},
 	data: function () {
@@ -54,4 +59,8 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.clear {
+	cursor: pointer;
+}
+</style>

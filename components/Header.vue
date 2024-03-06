@@ -41,7 +41,6 @@ export default Vue.extend({
 	data() {
 		return {
 			isScrolled: false,
-			scrollPosition: 0,
 			calculateOpacity: '100%',
 			section: '',
 			sections: [],
@@ -84,6 +83,9 @@ export default Vue.extend({
 				if (entry.isIntersecting) {
 					// Perform actions when section enters the viewport
 					visible.push(entry.target.id)
+
+					// TODO: not working all the time, if it doesn't leave the view port it won't re add
+					// window.history.pushState({}, '', '/#' + entry.target.id)
 					this.$ga.page(entry.target.id)
 				} else {
 					const index = visible.indexOf(entry.target.id)

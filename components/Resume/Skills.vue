@@ -7,12 +7,12 @@
 				span.line
 			.col.text-right
 				.row
-					.col.text-right # of jobs
+					.col.text-right Jobs
 				.row
 					.col.text-right
-						span.options(v-for="(exp, index) in exps" :class="selectedJobs === index && 'selected'")
-							span(@click="setSelectedJobs(index)")  {{index+1}}
-						span.options(:class="selectedJobs === ALL_JOBS && 'selected'" @click="setSelectedJobs(ALL_JOBS)")  all
+						span.options(v-for="(exp, index) in exps" :class="selectedJobs.includes(index) && 'selected'")
+							span(@click="toggleSelectedJob(index)")  {{index+1}}
+						span.options(:class="selectedJobs.length === 0 && 'selected'" @click="clearSelectedJobs()")  all
 			span.-webkit-linear-gradient
 	.card-body.pb-2
 		div(v-for="(value, index) in sortedSkillExperience" :key="index")
@@ -26,16 +26,20 @@
 import Vue from 'vue'
 import json from '@/assets/about.json'
 const MIN_SKILLS = 25
-const ALL_JOBS = -1
+const ALL_JOBS = []
 export default Vue.extend({
 	name: 'ResumeSkillsComponent',
 	props: {
-		setSelectedJobs: {
+		toggleSelectedJob: {
+			type: Function,
+			default: () => {},
+		},
+		clearSelectedJobs: {
 			type: Function,
 			default: () => {},
 		},
 		selectedJobs: {
-			type: Number,
+			type: Array,
 			default: ALL_JOBS,
 		},
 	},
@@ -50,22 +54,23 @@ export default Vue.extend({
 	computed: {
 		skillExperience() {
 			const skillExperience = {}
-			const loopSize =
-				this.selectedJobs === ALL_JOBS
-					? this.exps.length
-					: this.selectedJobs + 1
-			if (loopSize > 0) {
-				for (let i = 0; i < loopSize; i++) {
-					const durationYears = this.calculateYears(
-						this.exps[i].startDate,
-						this.exps[i].endDate
-					)
-					this.exps[i].skills.forEach((skill) => {
-						if (!skillExperience[skill]) {
-							skillExperience[skill] = 0
-						}
-						skillExperience[skill] += durationYears
-					})
+			if (this.exps.length > 0) {
+				for (let i = 0; i < this.exps.length; i++) {
+					if (
+						this.selectedJobs.includes(i) ||
+						this.selectedJobs.length === 0
+					) {
+						const durationYears = this.calculateYears(
+							this.exps[i].startDate,
+							this.exps[i].endDate
+						)
+						this.exps[i].skills.forEach((skill) => {
+							if (!skillExperience[skill]) {
+								skillExperience[skill] = 0
+							}
+							skillExperience[skill] += durationYears
+						})
+					}
 				}
 			}
 			return skillExperience

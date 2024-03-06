@@ -24,10 +24,10 @@
 
 			.col-md-6.col-lg-4
 				FadeIn(:rate="randomRate(2)")
-					Work(:selectedJobs="selectedJobs" :setSelectedJobs="setSelectedJobs")
+					Work(:selectedJobs="selectedJobs" :toggleSelectedJob="toggleSelectedJob" :clearSelectedJobs="clearSelectedJobs")
 			.col-md-6.col-lg-4
 				FadeIn(:rate="randomRate(3)")
-					Skills(:setSelectedJobs="setSelectedJobs" :selectedJobs="selectedJobs")
+					Skills(:selectedJobs="selectedJobs" :toggleSelectedJob="toggleSelectedJob" :clearSelectedJobs="clearSelectedJobs")
 </template>
 <script>
 import Vue from 'vue'
@@ -51,7 +51,7 @@ export default Vue.extend({
 		return {
 			exps: json.exps,
 			eds: json.eds,
-			selectedJobs: -1,
+			selectedJobs: [],
 		}
 	},
 	methods: {
@@ -61,8 +61,15 @@ export default Vue.extend({
 			const formattedDate = dateObject.toLocaleString('en-US', options)
 			return formattedDate !== 'Invalid Date' ? formattedDate : ' '
 		},
-		setSelectedJobs(jobs) {
-			this.selectedJobs = jobs
+		toggleSelectedJob(job) {
+			if (!this.selectedJobs.includes(job)) {
+				this.selectedJobs.push(job)
+			} else {
+				this.selectedJobs.splice(this.selectedJobs.indexOf(job), 1)
+			}
+		},
+		clearSelectedJobs() {
+			this.selectedJobs = []
 		},
 		randomRate(num) {
 			const randomNum =
