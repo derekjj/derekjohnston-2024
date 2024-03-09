@@ -5,16 +5,5 @@ export default defineNuxtConfig({
 		'@fortawesome/fontawesome-svg-core/styles.css',
 		'~/assets/styles/main.scss',
 	],
-	modules: [
-		[
-			'@nuxtjs/eslint-module',
-			{
-				extends: [
-					'@nuxtjs/eslint-config-typescript',
-					'plugin:nuxt/recommended',
-					'prettier',
-				],
-			},
-		],
-	],
+	modules: ['@nuxtjs/eslint-module'],
 })
