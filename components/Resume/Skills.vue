@@ -5,11 +5,11 @@
 			.col 
 				h4.mt-2 Skills
 				span.line
-			.col.text-right
+			.col.text-end
 				.row
-					.col.text-right Jobs
+					.col.text-end Jobs
 				.row
-					.col.text-right
+					.col.text-end
 						span.options(v-for="(exp, index) in exps" :class="selectedJobs.includes(index) && 'selected'")
 							span(@click="toggleSelectedJob(index)")  {{index+1}}
 						span.options(:class="selectedJobs.length === 0 && 'selected'" @click="clearSelectedJobs()")  all
@@ -20,14 +20,13 @@
 				.progress.mb-3 
 					.progress-bar.bg-danger(role="progressbar" :style="{width:(value?.years/sortedSkillExperience[0]?.years)*100 + '%'}" :title="value.years.toFixed(1) + ' years'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
 		.col.text-center(v-on:click="hideSkills = !hideSkills" v-if="sortedSkillExperience.length - 1 > MIN_SKILLS")
-			fa(:icon="hideSkills ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'")
+			font-awesome-icon(:icon="hideSkills ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'")
 </template>
 <script>
-import Vue from 'vue'
 import json from '@/assets/about.json'
 const MIN_SKILLS = 25
 const ALL_JOBS = []
-export default Vue.extend({
+export default {
 	name: 'ResumeSkillsComponent',
 	props: {
 		toggleSelectedJob: {
@@ -96,7 +95,7 @@ export default Vue.extend({
 			return durationMilliseconds / millisecondsPerYear
 		},
 	},
-})
+}
 </script>
 
 <style scoped>

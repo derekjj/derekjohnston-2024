@@ -1,11 +1,11 @@
 <template lang="pug">
 .container-fluid
 	section(ref="home" id="home")
-		.row.splash(id="home" :style="{ backgroundImage: 'linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,.7)),url(' + require('@/assets/tech-bg.jpg') + ')' }")
+		.row.splash(id="home")
 			header.p-5.header
 				.container
-					Socials.p-2
 					.header-content
+						Socials.p-2
 						h4.header-subtitle {{ about.intro }}
 						h1.header-title {{ about.firstName }} {{ about.lastName }}
 						h6.header-mono {{ about.title }}
@@ -27,23 +27,14 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import Info from '~/components/Contact/Info'
+import backgroundUrl from '~/assets/tech-bg.jpg'
 import jsonAbout from '@/assets/about.json'
-
-export default Vue.extend({
-	name: 'IndexPage',
-	components: {
-		Info,
-	},
+export default {
 	data() {
-		return {
-			about: jsonAbout.about,
-		}
+		return { backgroundUrl, about: jsonAbout.about }
 	},
-})
+}
 </script>
-
 <style scoped>
 .splash {
 	position: relative;
@@ -53,8 +44,15 @@ export default Vue.extend({
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	color: #fff;
+	background-image: linear-gradient(
+			to top,
+			rgba(0, 0, 0, 0.7),
+			rgba(0, 0, 0, 0.7)
+		),
+		url(~/assets/tech-bg.jpg);
 }
 .header-content {
+	width: fit-content;
 	button {
 		color: #fff;
 		background-color: #f63750;

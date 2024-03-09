@@ -5,7 +5,7 @@
 				.col 
 					h4 Expertise
 					span.line
-				.col.text-right
+				.col.text-end
 					a(@click="clearSelectedJobs()")
 						span.clear clear selected
 	.card-body
@@ -15,17 +15,16 @@
 				.row 
 					.col
 						b {{exp.title}}
-					.col.text-right
+					.col.text-end
 						b {{ exp.employer }}
 				p.subtitle.text-justify {{ exp.description }} 
 			hr(v-if="i < exps.length - 1")
 </template>
 <script>
-import Vue from 'vue'
 import json from '@/assets/about.json'
 const ALL_JOBS = []
 
-export default Vue.extend({
+export default {
 	name: 'ResumeWorkComponent',
 	props: {
 		toggleSelectedJob: {
@@ -56,7 +55,7 @@ export default Vue.extend({
 			return formattedDate !== 'Invalid Date' ? formattedDate : ' '
 		},
 	},
-})
+}
 </script>
 
 <style scoped>

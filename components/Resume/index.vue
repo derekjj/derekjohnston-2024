@@ -1,5 +1,5 @@
 <template lang="pug">
-.row.section( :style="{ backgroundImage: 'linear-gradient(to top,rgba(0,0,0,.4),rgba(0,0,0,.4)),url(' + require('@/assets/tech2-bg.jpg') + ')' }")
+.row.section
 	.container
 		.row.mx-3
 			h2.mb-5.ml-3.text-white
@@ -30,7 +30,6 @@
 					Skills(:selectedJobs="selectedJobs" :toggleSelectedJob="toggleSelectedJob" :clearSelectedJobs="clearSelectedJobs")
 </template>
 <script>
-import Vue from 'vue'
 import json from '@/assets/about.json'
 import Education from '~/components/Resume/Education'
 import Languages from '~/components/Resume/Languages'
@@ -38,7 +37,7 @@ import Volunteer from '~/components/Resume/Volunteer'
 import Work from '~/components/Resume/Work'
 import Skills from '~/components/Resume/Skills'
 
-export default Vue.extend({
+export default {
 	name: 'ResumeComponent',
 	components: {
 		Education,
@@ -78,7 +77,7 @@ export default Vue.extend({
 			return '0.' + randomNum + 's'
 		},
 	},
-})
+}
 </script>
 
 <style scoped>
@@ -90,6 +89,12 @@ export default Vue.extend({
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-image: linear-gradient(
+			to top,
+			rgba(0, 0, 0, 0.4),
+			rgba(0, 0, 0, 0.4)
+		),
+		url(~/assets/tech2-bg.jpg);
 }
 .container {
 	max-width: 1600px;

@@ -1,19 +1,17 @@
 <template lang="pug">
 button.btn.btn-outline-danger(@click="openPDF")
-    fa(:icon="['fas', 'print']")
-    |  Download my CV 
+	font-awesome-icon(:icon="['fas', 'print']")
+	|  Download my CV 
 </template>
 
 <script>
-import Vue from 'vue'
-
-export default Vue.extend({
+export default {
 	name: 'ResumeButtonComponent',
 	methods: {
 		openPDF() {
 			window.open('/Resume Derek Johnston -phone.pdf', '_blank')
 		},
 	},
-})
+}
 </script>
 <style scoped></style>

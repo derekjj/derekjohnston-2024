@@ -1,19 +1,17 @@
 <template lang="pug">
 div
-    .row(v-for="(data, index) in info" :key="index" v-if="data.type !== 'Location' || location")
+    .row(v-for="(data, index) in info" :key="index" v-if="data?.type !== 'Location' || location")
         .col-4.text-nowrap 
             b {{data.type}} : &nbsp;
         .col-8 {{data.data}}
     Socials
     .row.py-2
-      .col.text-center
-        ResumeBtn
+        .col.text-center
+            ResumeBtn
 </template>
 
 <script>
-import Vue from 'vue'
-
-export default Vue.extend({
+export default {
 	name: 'ContactInfoComponent',
 	props: {
 		location: {
@@ -31,7 +29,7 @@ export default Vue.extend({
 			],
 		}
 	},
-})
+}
 </script>
 
 <style scoped>

@@ -4,20 +4,20 @@
 		.row.text-center
 			.col-md-6.col-lg-3
 				.row
-					.col-5.text-right.text-light.border-right.py-3
+					.col-5.text-end.text-light.border-right.py-3
 						.m-auto
-							fa(icon="fa-solid fa-clock")
+							font-awesome-icon(icon="fa-solid fa-clock")
 					.col-7.text-left.py-3
 						h1.text-danger.font-weight-bold.font40
 							| {{ sortedSkillExperience[0]?.years.toFixed(1) }}
 						p.text-light.mb-1 Years Experience
 			.col-md-6.col-lg-3
 				.row
-					.col-5.text-right.text-light.border-right.py-3
+					.col-5.text-end.text-light.border-right.py-3
 						.m-auto
-							fa(icon="fa-solid fa-code")
+							font-awesome-icon(icon="fa-solid fa-code")
 					.col-7.text-left.py-3
-						fa(v-if="loading"
+						font-awesome-icon(v-if="loading"
 							icon="fa-solid fa-spinner"
 							class="spinner")
 						h1.text-danger.font-weight-bold.font40(v-else)
@@ -25,11 +25,11 @@
 						p.text-light.mb-1 Projects
 			.col-md-6.col-lg-3
 				.row
-					.col-5.text-right.text-light.border-right.py-3
+					.col-5.text-end.text-light.border-right.py-3
 						.m-auto
-							fa(icon="fa-solid fa-code-commit")
+							font-awesome-icon(icon="fa-solid fa-code-commit")
 					.col-7.text-left.py-3
-						fa(v-if="loading"
+						font-awesome-icon(v-if="loading"
 							icon="fa-solid fa-spinner"
 							class="spinner")
 						h1.text-danger.font-weight-bold.font40(v-else)
@@ -37,11 +37,11 @@
 						p.text-light.mb-1 Commits
 			.col-md-6.col-lg-3
 				.row
-					.col-5.text-right.text-light.border-right.py-3
+					.col-5.text-end.text-light.border-right.py-3
 						.m-auto
-							fa(icon="fa-solid fa-heart-pulse")
+							font-awesome-icon(icon="fa-solid fa-heart-pulse")
 					.col-7.text-left.py-3
-						fa(v-if="loading"
+						font-awesome-icon(v-if="loading"
 							icon="fa-solid fa-spinner"
 							class="spinner")
 						h1.text-danger.font-weight-bold.font40(v-else)
@@ -60,11 +60,9 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import axios from 'axios'
 import json from '@/assets/about.json'
-
-export default Vue.extend({
+export default {
 	name: 'BreakDownComponent',
 	data: function () {
 		return {
@@ -286,7 +284,7 @@ export default Vue.extend({
 			return durationMilliseconds / millisecondsPerYear
 		},
 	},
-})
+}
 </script>
 <style scoped>
 svg {

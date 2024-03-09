@@ -6,22 +6,19 @@
 	.card-body
 		.row.my-2(v-for="(role, index) in roles" :key="index")
 			.col-2.text-danger.pt-2.text-center
-				fa(:icon="role.icon")
+				font-awesome-icon(:icon="role.icon")
 			.col-10
-				.row
-					.col-12 
-						h6 {{ role.title }}
-					.col-6.text-center(v-for="(exp, i) in exps" :key="i" v-if="exp.roles.includes(role.title)")
+				.row.b
+					.col-12(:class="index < roles.length - 1 && 'border-bottom'")
+						h6.lh-lg.mt-1 {{ role.title }}
+					.col-6.text-center(v-for="(exp, i) in exps" :key="i" v-if="exp?.roles.includes(role.title)")
 						.subtitle {{ exp.employer }}
-				.row(v-if="index < roles.length - 1")
-					hr
 </template>
 
 <script>
-import Vue from 'vue'
 import json from '~/assets/about.json'
 
-export default Vue.extend({
+export default {
 	name: 'AboutExpComponent',
 	data() {
 		return {
@@ -37,7 +34,7 @@ export default Vue.extend({
 			return expRole ? expRole.exps.map((exp) => exp.title) : []
 		},
 	},
-})
+}
 </script>
 
 <style scoped>

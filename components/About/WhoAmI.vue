@@ -14,11 +14,9 @@
 
 <script>
 // TODO: use json vs static
-import Vue from 'vue'
-
-export default Vue.extend({
+export default {
 	name: 'AboutWhoAmIComponent',
-})
+}
 </script>
 
 <style scoped>

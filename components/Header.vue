@@ -1,42 +1,47 @@
 <template lang="pug">            
 .sticky-top
-	b-nav.navbar.navbar-expand-md.navbar-light.bg-white.affix(data-spy="affix" data-offset-top="510" toggleable="lg")
-		b-navbar-brand.d-flex.d-md-none.row
-			img.brand-img.small(src="~/assets/me2.jpg" alt="Display Picture")
-			.col
-				.h5.brand-title Derek Johnston
-				.brand-subtitle Full Stack / Mobile Developer 
-		b-navbar-toggle.ml-auto(target="nav-collapse")
-		b-collapse(id="nav-collapse" is-nav)
-			b-navbar-nav
-				b-nav-item(href="#home" )
-					div(:class="visibleSections.includes('home') && 'active'"
-						@click="section='home'") Home
-				b-nav-item(href="#about")
-					div(:class="visibleSections.includes('about') && 'active'" 
-						@click="section='about'") About
-			b-navbar-nav.ml-auto.d-sm-none.d-md-block(:class="{ faded: isScrolled }")
+	nav.navbar.navbar-expand-md.navbar-light.bg-white.affix(data-spy="affix" data-offset-top="510" toggleable="lg")
+		a.navbar-brand.d-flex.d-md-none
+			.row
+				img.brand-img.small(src="~/assets/me2.jpg" alt="Display Picture")
+				.col
+					.h5.brand-title Derek Johnston
+					.brand-subtitle Full Stack / Mobile Developer 
+		button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+			span.navbar-toggler-icon
+		.collapse.navbar-collapse(id="navbarSupportedContent")
+			ul.w-100.navbar-nav
+				li.nav-item
+					a.nav-link(:class="visibleSections.includes('home') && 'active'"
+						@click="section='home'" href="#home") Home
+				li.nav-item
+					a.nav-link(:class="visibleSections.includes('about') && 'active'" 
+						@click="section='about'" href="#about") About
+			ul.w-100.navbar-nav.d-sm-none.d-md-block.text-center(:class="{ faded: isScrolled }")
 				img.brand-img(src="~/assets/me2.jpg" alt="Display Picture" v-if="!isScrolled"
 					:style="{ opacity: calculateOpacity }")
 				.fadedContent(v-if="isScrolled")
-					.h5.brand-title.text-center Derek Johnston
+					.h5.brand-title Derek Johnston
 					.brand-subtitle Full Stack / Mobile Developer
-			b-navbar-nav.ml-auto
-				b-nav-item(href="#resume")
-					div(:class="visibleSections.includes('resume') && 'active'" 
-					@click="section='resume'" right) Resume
-				//- b-nav-item(href="#portfolio")
-				//- 	div(:class="visibleSections.includes('portfolio') && 'active'" 
+			ul.w-100.navbar-nav
+				//- mobile
+				li.w-100.nav-item.d-md-none.d-flex
+					a.nav-link(:class="visibleSections.includes('resume') && 'active'" 
+						@click="section='resume'" right href="#resume") Resume
+				//- desktop
+				li.w-100.nav-item.text-end.d-sm-none.d-md-block
+					a.nav-link(:class="visibleSections.includes('resume') && 'active'" 
+						@click="section='resume'" right href="#resume") Resume
+				//- li.nav-item(href="#portfolio")
+				//- 	a.nav-link(:class="visibleSections.includes('portfolio') && 'active'" 
 				//- 	@click="section='portfolio'" right) Portfolio
-				b-nav-item(href="#contact")
-					div(:class="visibleSections.includes('contact') && 'active'" 
-					@click="section='contact'" right) Contact
+				li.nav-item
+					a.nav-link(:class="visibleSections.includes('contact') && 'active'" 
+						@click="section='contact'" right href="#contact") Contact
 </template>
 
 <script>
-import Vue from 'vue'
-
-export default Vue.extend({
+export default {
 	name: 'HeaderComponent',
 	data() {
 		return {
@@ -54,19 +59,17 @@ export default Vue.extend({
 
 		// Use nextTick to ensure that the DOM has been updated
 		this.loadSections()
+		this.intersectionObserver = new IntersectionObserver(
+			this.handleIntersection
+		)
 	},
-	beforeDestroy() {
+	beforeUnmount() {
 		// Remove the scroll event listener when the component is destroyed to avoid memory leaks
 		window.removeEventListener('scroll', this.handleScroll)
 
 		this.sections.forEach((section) => {
 			this.intersectionObserver.unobserve(section)
 		})
-	},
-	created() {
-		this.intersectionObserver = new IntersectionObserver(
-			this.handleIntersection
-		)
 	},
 	methods: {
 		loadSections() {
@@ -86,7 +89,7 @@ export default Vue.extend({
 
 					// TODO: not working all the time, if it doesn't leave the view port it won't re add
 					// window.history.pushState({}, '', '/#' + entry.target.id)
-					this.$ga.page(entry.target.id)
+					// this.$ga.page(entry.target.id)
 				} else {
 					const index = visible.indexOf(entry.target.id)
 					if (index > -1) {
@@ -126,10 +129,14 @@ export default Vue.extend({
 			}
 		},
 	},
-})
+}
 </script>
 
 <style scoped>
+.sticky-top {
+	margin-left: -12px;
+	margin-right: -12px;
+}
 .brand-img {
 	background-color: #fff;
 	border-radius: 50%;
@@ -167,8 +174,6 @@ export default Vue.extend({
 	display: flex;
 	box-shadow: 0 1px 10px rgba(54, 54, 54, 0.18);
 	-webkit-box-shadow: 0 1px 10px rgba(54, 54, 54, 0.18);
-	margin-left: -15px;
-	margin-right: -15px;
 	height: 70px;
 }
 a {
@@ -182,7 +187,7 @@ a {
 	display: block !important;
 	padding: 0.5rem 1rem !important;
 }
-.navbar .nav-link .active {
+a.active {
 	color: #f85c70 !important;
 }
 .navbar-collapse.collapse.show {

@@ -34,10 +34,9 @@
 					Info(:location="false")
 </template>
 <script>
-import Vue from 'vue'
 import Info from '~/components/Contact/Info'
 
-export default Vue.extend({
+export default {
 	name: 'ContactComponent',
 	components: {
 		Info,
@@ -55,7 +54,7 @@ export default Vue.extend({
 			}
 		)
 	},
-})
+}
 </script>
 
 <style scoped>

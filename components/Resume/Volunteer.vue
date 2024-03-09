@@ -9,15 +9,14 @@
 				h6.title.text-danger {{ getMonthDay(volunteer.startDate) }} - {{ getMonthDay(volunteer.endDate) }}
 				b.row 
 					.col {{volunteer.title}}
-					.col.text-right {{ volunteer.employer }}
+					.col.text-end {{ volunteer.employer }}
 				p.subtitle.text-justify {{ volunteer.description }} 
 			hr(v-if="i < volunteers.length - 1")
 </template>
 <script>
-import Vue from 'vue'
 import json from '@/assets/about.json'
 
-export default Vue.extend({
+export default {
 	name: 'ResumeVolunteerComponent',
 	data: function () {
 		return {
@@ -35,7 +34,7 @@ export default Vue.extend({
 			this.selectedJobs = jobs
 		},
 	},
-})
+}
 </script>
 
 <style scoped></style>

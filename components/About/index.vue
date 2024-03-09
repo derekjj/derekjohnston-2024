@@ -15,19 +15,18 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import Info from '~/components/Contact/Info'
 import WhoAmI from '~/components/About/WhoAmI'
 import Exp from '~/components/About/Exp'
 
-export default Vue.extend({
+export default {
 	name: 'AboutComponent',
 	components: {
 		Info,
 		WhoAmI,
 		Exp,
 	},
-})
+}
 </script>
 
 <style scoped>

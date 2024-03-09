@@ -1,14 +1,12 @@
 <template lang="pug">
 .row
-    .col.icons.text-center(v-for="social in socials")
-        a.icons(:href="social.url")
-            fa(:icon="['fab', social.icon]")
+	.col.icons.text-center(v-for="social in socials")
+		a.icons(:href="social.url")
+			font-awesome-icon(:icon="['fab',social.icon]" :color="social.color")
 </template>
 
 <script>
-import Vue from 'vue'
-
-export default Vue.extend({
+export default {
 	name: 'SocialsComponent',
 	data() {
 		return {
@@ -16,13 +14,22 @@ export default Vue.extend({
 				{
 					icon: 'linkedin',
 					url: 'https://www.linkedin.com/in/derekjjohnston/',
+					color: '#0077b5',
 				},
-				{ icon: 'github', url: 'https://github.com/derekjj' },
-				{ icon: 'gitlab', url: 'https://gitlab.com/derekjj' },
+				{
+					icon: 'github',
+					url: 'https://github.com/derekjj',
+					color: '#999',
+				},
+				{
+					icon: 'gitlab',
+					url: 'https://gitlab.com/derekjj',
+					color: '#fc6d26',
+				},
 			],
 		}
 	},
-})
+}
 </script>
 
 <style scoped>
@@ -33,8 +40,5 @@ export default Vue.extend({
 .splash {
 	height: 600px;
 	background-size: 100% auto;
-}
-a {
-	color: #999;
 }
 </style>

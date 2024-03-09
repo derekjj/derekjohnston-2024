@@ -9,23 +9,22 @@
 			.row
 				.col-7.px-0
 					b {{ed.title}}
-				.col-5.px-0.text-right
+				.col-5.px-0.text-end
 					b {{ed.school}}
 			p.subtitle.text-justify {{ ed.description }}
 			hr(v-if="i < eds.length - 1")
 </template>
 <script>
-import Vue from 'vue'
 import json from '@/assets/about.json'
 
-export default Vue.extend({
+export default {
 	name: 'ResumeComponent',
 	data() {
 		return {
 			eds: json.eds,
 		}
 	},
-})
+}
 </script>
 
 <style scoped></style>
