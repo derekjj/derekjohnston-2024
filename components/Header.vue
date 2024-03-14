@@ -21,7 +21,6 @@
 			ul.w-100.navbar-nav.d-sm-none.d-md-block.text-center(:class="{ faded: isScrolled }")
 				Transition(mode="out-in")
 					img.brand-img(src="~/assets/me2.jpg" alt="Display Picture" v-if="!isScrolled")
-						//- :style="{ opacity: calculateOpacity }")
 					.fadedContent(v-else)
 						.h5.brand-title Derek Johnston
 						.brand-subtitle Full Stack / Mobile Developer
