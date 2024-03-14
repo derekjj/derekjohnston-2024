@@ -7,6 +7,7 @@
 				.col
 					.h5.brand-title Derek Johnston
 					.brand-subtitle Full Stack / Mobile Developer 
+		//- TODO: Fix this for mobile
 		button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
 			span.navbar-toggler-icon
 		.collapse.navbar-collapse(id="navbarSupportedContent")
@@ -18,11 +19,12 @@
 					a.nav-link(:class="visibleSections.includes('about') && 'active'" 
 						@click="section='about'" href="#about") About
 			ul.w-100.navbar-nav.d-sm-none.d-md-block.text-center(:class="{ faded: isScrolled }")
-				img.brand-img(src="~/assets/me2.jpg" alt="Display Picture" v-if="!isScrolled"
-					:style="{ opacity: calculateOpacity }")
-				.fadedContent(v-if="isScrolled")
-					.h5.brand-title Derek Johnston
-					.brand-subtitle Full Stack / Mobile Developer
+				Transition(mode="out-in")
+					img.brand-img(src="~/assets/me2.jpg" alt="Display Picture" v-if="!isScrolled")
+						//- :style="{ opacity: calculateOpacity }")
+					.fadedContent(v-else)
+						.h5.brand-title Derek Johnston
+						.brand-subtitle Full Stack / Mobile Developer
 			ul.w-100.navbar-nav
 				//- mobile
 				li.w-100.nav-item.d-md-none.d-flex
@@ -133,6 +135,14 @@ export default {
 </script>
 
 <style scoped>
+.v-enter-active,
+.v-leave-active {
+	transition: opacity 0.5s ease;
+}
+.v-enter-from,
+.v-leave-to {
+	opacity: 0;
+}
 .sticky-top {
 	margin-left: -12px;
 	margin-right: -12px;
