@@ -2,7 +2,8 @@
 .row
 	.col.icons.text-center(v-for="social in socials")
 		a.icons(:href="social.url")
-			font-awesome-icon(:icon="['fab',social.icon]" :color="social.color")
+			ClientOnly
+				font-awesome-icon(:icon="['fab', social.icon]" :color="social.color")
 </template>
 
 <script>

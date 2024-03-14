@@ -1,13 +1,14 @@
 <template lang="pug">
 div
-    .row(v-for="(data, index) in info" :key="index" v-if="data?.type !== 'Location' || location")
-        .col-4.text-nowrap 
-            b {{data.type}} : &nbsp;
-        .col-8 {{data.data}}
-    Socials
-    .row.py-2
-        .col.text-center
-            ResumeBtn
+	.row(v-for="(data, index) in info" :key="index")
+		template(v-if="data?.type !== 'Location' || location")
+			.col-4.text-nowrap 
+				b {{data.type}} : &nbsp;
+			.col-8 {{data.data}}
+	Socials
+	.row.py-2
+		.col.text-center
+			ResumeBtn
 </template>
 
 <script>

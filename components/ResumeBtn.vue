@@ -1,7 +1,8 @@
 <template lang="pug">
 button.btn.btn-outline-danger(@click="openPDF")
-	font-awesome-icon(:icon="['fas', 'print']")
-	|  Download my CV 
+	ClientOnly
+		font-awesome-icon(:icon="['fas', 'print']")
+		|  Download my CV 
 </template>
 
 <script>

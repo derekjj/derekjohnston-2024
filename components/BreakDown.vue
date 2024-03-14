@@ -6,7 +6,8 @@
 				.row
 					.col-5.text-end.text-light.border-right.py-3
 						.m-auto
-							font-awesome-icon(icon="fa-solid fa-clock")
+							ClientOnly
+								font-awesome-icon(icon="fa-solid fa-clock")
 					.col-7.text-left.py-3
 						h1.text-danger.font-weight-bold.font40
 							| {{ sortedSkillExperience[0]?.years.toFixed(1) }}
@@ -15,11 +16,13 @@
 				.row
 					.col-5.text-end.text-light.border-right.py-3
 						.m-auto
-							font-awesome-icon(icon="fa-solid fa-code")
+							ClientOnly
+								font-awesome-icon(icon="fa-solid fa-code")
 					.col-7.text-left.py-3
-						font-awesome-icon(v-if="loading"
-							icon="fa-solid fa-spinner"
-							class="spinner")
+						ClientOnly(v-if="loading")
+							font-awesome-icon(
+								icon="fa-solid fa-spinner"
+								class="spinner")
 						h1.text-danger.font-weight-bold.font40(v-else)
 							| {{ github.projectCount + gitlab.projectCount }}
 						p.text-light.mb-1 Projects
@@ -27,11 +30,13 @@
 				.row
 					.col-5.text-end.text-light.border-right.py-3
 						.m-auto
-							font-awesome-icon(icon="fa-solid fa-code-commit")
+							ClientOnly
+								font-awesome-icon(icon="fa-solid fa-code-commit")
 					.col-7.text-left.py-3
-						font-awesome-icon(v-if="loading"
-							icon="fa-solid fa-spinner"
-							class="spinner")
+						ClientOnly(v-if="loading")
+							font-awesome-icon(
+								icon="fa-solid fa-spinner"
+								class="spinner")
 						h1.text-danger.font-weight-bold.font40(v-else)
 							| {{ github.commitCount + gitlab.commitCount }}
 						p.text-light.mb-1 Commits
@@ -39,11 +44,13 @@
 				.row
 					.col-5.text-end.text-light.border-right.py-3
 						.m-auto
-							font-awesome-icon(icon="fa-solid fa-heart-pulse")
+							ClientOnly
+								font-awesome-icon(icon="fa-solid fa-heart-pulse")
 					.col-7.text-left.py-3
-						font-awesome-icon(v-if="loading"
-							icon="fa-solid fa-spinner"
-							class="spinner")
+						ClientOnly(v-if="loading")
+							font-awesome-icon(
+								icon="fa-solid fa-spinner"
+								class="spinner")
 						h1.text-danger.font-weight-bold.font40(v-else)
 							| {{ estimatedCoffeeConsumption.toFixed(2) }}
 						p.text-light.mb-1 Coffee Drank

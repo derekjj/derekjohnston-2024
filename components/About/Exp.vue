@@ -6,13 +6,14 @@
 	.card-body
 		.row.my-2(v-for="(role, index) in roles" :key="index")
 			.col-2.text-danger.pt-2.text-center
-				font-awesome-icon(:icon="role.icon")
+				ClientOnly
+					font-awesome-icon(:icon="role.icon")
 			.col-10
 				.row.b
 					.col-12(:class="index < roles.length - 1 && 'border-bottom'")
 						h6.lh-lg.mt-1 {{ role.title }}
-					.col-6.text-center(v-for="(exp, i) in exps" :key="i" v-if="exp?.roles.includes(role.title)")
-						.subtitle {{ exp.employer }}
+					.col-6.text-center(v-for="(exp, i) in exps" :key="i")
+						.subtitle(v-if="exp?.roles.includes(role.title)") {{ exp.employer }}
 </template>
 
 <script>
