@@ -16,9 +16,12 @@
 			span.-webkit-linear-gradient
 	.card-body.pb-2
 		div(v-for="(value, index) in sortedSkillExperience" :key="index")
-			h6(:class="index > MIN_SKILLS && hideSkills && 'hide'") {{ value.skill }}
-				.progress.mb-3 
-					.progress-bar.bg-danger(role="progressbar" :style="{width:(value?.years/sortedSkillExperience[0]?.years)*100 + '%'}" :title="value.years.toFixed(1) + ' years'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
+			.row.p-0
+				.col-8.p-0
+					h6(:class="index > MIN_SKILLS && hideSkills && 'hide'") {{ value.skill }}
+				.col-4.text-end.p-0 {{value.years.toFixed(1)}} yrs
+			.progress.mb-3 
+				.progress-bar.bg-danger(role="progressbar" :style="{width:(value?.years/sortedSkillExperience[0]?.years)*100 + '%'}" :title="value.years.toFixed(1) + ' years'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
 		.col.text-center(v-on:click="hideSkills = !hideSkills" v-if="sortedSkillExperience.length - 1 > MIN_SKILLS")
 			font-awesome-icon(:icon="hideSkills ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'")
 </template>
@@ -87,7 +90,6 @@ export default {
 			return skillArray
 		},
 	},
-	mounted() {},
 	methods: {
 		calculateYears(startDate, endDate) {
 			const millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25
