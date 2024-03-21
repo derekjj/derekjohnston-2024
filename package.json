@@ -55,6 +55,6 @@
 		"prettier": "^3.2.5",
 		"sass": "^1.71.1",
 		"sass-loader": "^14.1.1",
-		"typescript": "^5.4.2"
+		"typescript": "^5.4.3"
 	}
 }
