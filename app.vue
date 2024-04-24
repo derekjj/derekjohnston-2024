@@ -157,7 +157,7 @@ html {
 	background-color: #eaf0fc;
 }
 .selected {
-	div {
+	.option {
 		background-color: #ccc;
 	}
 	hr {
