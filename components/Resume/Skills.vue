@@ -109,8 +109,5 @@ span.selected {
 }
 .options {
 	cursor: pointer;
-	&:hover {
-		background-color: #ccc;
-	}
 }
 </style>
