@@ -10,7 +10,7 @@
 						span.clear clear selected
 	.card-body
 		div(v-for="(exp,i) in exps" :class="selectedJobs.includes(i) && 'selected'" @click="toggleSelectedJob(i)") 
-			div.p-2.option
+			div.p-2.option(title="Click to filter")
 				h6.title.text-danger {{ getMonthDay(exp.startDate) }} - {{ getMonthDay(exp.endDate) }}
 				.row 
 					.col
@@ -63,6 +63,7 @@ export default {
 	cursor: pointer;
 }
 .option:hover {
+	cursor: pointer;
 	background-color: #e2e2e2;
 }
 </style>
