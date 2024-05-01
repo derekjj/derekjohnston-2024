@@ -12,8 +12,8 @@
 				.row.b
 					.col-12(:class="index < roles.length - 1 && 'border-bottom'")
 						h6.lh-lg.mt-1 {{ role.title }}
-					.col-6.text-center(v-for="(exp, i) in exps" :key="i")
-						.subtitle(v-if="exp?.roles.includes(role.title)") {{ exp.employer }}
+					.col-6.text-center(v-for="(job, i) in jobsWithRole(role.title)" :key="i")
+						.subtitle {{ job.employer }}
 </template>
 
 <script>
@@ -33,6 +33,9 @@ export default {
 				(role) => role.title === roleTitle
 			)
 			return expRole ? expRole.exps.map((exp) => exp.title) : []
+		},
+		jobsWithRole(role) {
+			return this.exps.filter((exp) => exp.roles.includes(role))
 		},
 	},
 }
