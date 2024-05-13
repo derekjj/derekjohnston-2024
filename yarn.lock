@@ -1733,10 +1733,17 @@
     vscode-languageserver-textdocument "^1.0.11"
     vscode-uri "^3.0.8"
 
-"@volar/source-map@2.2.0", "@volar/source-map@~2.2.0":
+"@volar/source-map@2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@volar/source-map/-/source-map-2.2.0.tgz#9d9947ce64396290d80a15d692cc35003c5613c3"
   integrity sha512-HQlPRlHOVqCCHK8wI76ZldHkEwKsjp7E6idUc36Ekni+KJDNrqgSqPvyHQixybXPHNU7CI9Uxd9/IkxO7LuNBw==
+  dependencies:
+    muggle-string "^0.4.0"
+
+"@volar/source-map@~2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@volar/source-map/-/source-map-2.2.2.tgz#ec25e8366297b1e9bbd3abcb1636330010d59d59"
+  integrity sha512-vUwvZuSW6iN4JI9QRinh9EjFasx1TUtnaWMKwgWx08xz1PyYuNkLlWlrZXBZ5GGBhML0u230M/7X+AHY2h9yKg==
   dependencies:
     muggle-string "^0.4.0"
 
@@ -1891,13 +1898,13 @@
     colord "^2.9.3"
     focus-trap "^7.5.4"
 
-"@vue/language-plugin-pug@^2.0.16":
-  version "2.0.16"
-  resolved "https://registry.yarnpkg.com/@vue/language-plugin-pug/-/language-plugin-pug-2.0.16.tgz#623e7e37ededbff35a537e4045d1acd1e61004bc"
-  integrity sha512-7fyq0qD7rUrOyGje8lfZWRYf5ezIqr1VoyzUckSbfST5Q0wM8lxKlwffbyOJ2TSLpYitVelSx/JLVcohBu06Ww==
+"@vue/language-plugin-pug@^2.0.17":
+  version "2.0.17"
+  resolved "https://registry.yarnpkg.com/@vue/language-plugin-pug/-/language-plugin-pug-2.0.17.tgz#5b3fadd3caf59b0abc34b31be96b6f8cda243542"
+  integrity sha512-/okAMQWe3DuNQcAx4mL4LN073MHsCQbgujCZOnQBE/NJWU3YdEzqTDVP6qY1/5KoYquLV2tospRtRaWgzqOBtQ==
   dependencies:
-    "@volar/source-map" "~2.2.0"
-    volar-service-pug "0.0.42"
+    "@volar/source-map" "~2.2.2"
+    volar-service-pug "0.0.44"
 
 "@vue/reactivity@3.4.27":
   version "3.4.27"
@@ -3297,7 +3304,7 @@ eslint-plugin-unicorn@^52.0.0:
     semver "^7.5.4"
     strip-indent "^3.0.0"
 
-eslint-plugin-vue@^9.25.0, eslint-plugin-vue@^9.26.0, eslint-plugin-vue@^9.4.0:
+eslint-plugin-vue@^9.26.0, eslint-plugin-vue@^9.4.0:
   version "9.26.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-9.26.0.tgz#bf7f5cce62c8f878059b91edae44d22974133af5"
   integrity sha512-eTvlxXgd4ijE1cdur850G6KalZqk65k1JKoOI2d1kT3hr8sPD07j1q98FRFdNnpxBELGPWxZmInxeHGF/GxtqQ==
@@ -7276,24 +7283,24 @@ void-elements@^3.1.0:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
   integrity sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==
 
-volar-service-html@0.0.42:
-  version "0.0.42"
-  resolved "https://registry.yarnpkg.com/volar-service-html/-/volar-service-html-0.0.42.tgz#fb5d7c1de56a3cf420727d61a0a7ddb5dfc52afa"
-  integrity sha512-6KMjwB3VMrpQgqm4gM73tDO91xJcga09vi4oyI9zayILhlUPuQW4KPjAN3NvLK4fOkcDTn20k/4gGm335ETKVw==
+volar-service-html@0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/volar-service-html/-/volar-service-html-0.0.44.tgz#ff4bf51dbbd1ca1d15be78b7305ae13310691f0a"
+  integrity sha512-I6xSeixpZG0xbt1+EvuyDSLvEt8yM4B5S/oYgJo9lFa3wVVJN9Vjty5G1GFZav+FaYzUBe4VynvOPiYRwHlFUQ==
   dependencies:
     vscode-html-languageservice "npm:@johnsoncodehk/vscode-html-languageservice@5.2.0-34a5462"
     vscode-languageserver-textdocument "^1.0.11"
     vscode-uri "^3.0.8"
 
-volar-service-pug@0.0.42:
-  version "0.0.42"
-  resolved "https://registry.yarnpkg.com/volar-service-pug/-/volar-service-pug-0.0.42.tgz#5c1431ac9492ae34b8e375e4e92ca2fa6ed389b3"
-  integrity sha512-p+ESdsxkyHbRXjEhRitvovOypD7deYAlaiEgfQZo9so68mX1rDlQTHuWVVIkPUq9Umba8d8zTjwkp+L513G5Aw==
+volar-service-pug@0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/volar-service-pug/-/volar-service-pug-0.0.44.tgz#9348d1193c9d957d5a09cf68296d2089eee319ac"
+  integrity sha512-iawFuax+vUfd8msZ0dvQKjw2A5pLNvf/Mq9umXe7Aoz1cuuIfYQX8hFQYFdwEagPjWha6QBeQnwxrAfSXNeZaA==
   dependencies:
     "@volar/language-service" "~2.2.0"
     pug-lexer "^5.0.1"
     pug-parser "^6.0.0"
-    volar-service-html "0.0.42"
+    volar-service-html "0.0.44"
     vscode-html-languageservice "npm:@johnsoncodehk/vscode-html-languageservice@5.2.0-34a5462"
     vscode-languageserver-textdocument "^1.0.11"
 
