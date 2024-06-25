@@ -36,7 +36,7 @@
 		"pug-plain-loader": "^1.1.0",
 		"vite-plugin-pug": "^0.3.2",
 		"vue": "^3.4.30",
-		"vue-router": "^4.3.3"
+		"vue-router": "^4.4.0"
 	},
 	"devDependencies": {
 		"@nuxt/eslint-config": "^0.3.13",
