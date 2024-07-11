@@ -3,7 +3,7 @@
 	.card-header 
 		.row
 			.col 
-				h4.mt-2 Skills
+				h4.mt-2 Tech
 				span.line
 			.col.text-end
 				.row
@@ -15,22 +15,22 @@
 						span.options(:class="selectedJobs.length === 0 && 'selected'" @click="clearSelectedJobs()")  all
 			span.-webkit-linear-gradient
 	.card-body.pb-2
-		div(v-for="(value, index) in sortedSkillExperience" :key="index")
+		div(v-for="(value, index) in sortedSkillExperience" :key="index" :class="index > MIN_TECH && hideSkills && 'hide'")
 			.row.p-0
 				.col-8.p-0
-					h6(:class="index > MIN_SKILLS && hideSkills && 'hide'") {{ value.skill }}
+					h6 {{ value.skill }}
 				.col-4.text-end.p-0 {{value.years.toFixed(1)}} yrs
 			.progress.mb-3 
 				.progress-bar.bg-danger(role="progressbar" :style="{width:(value?.years/sortedSkillExperience[0]?.years)*100 + '%'}" :title="value.years.toFixed(1) + ' years'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
-		.col.text-center(v-on:click="hideSkills = !hideSkills" v-if="sortedSkillExperience.length - 1 > MIN_SKILLS")
+		.col.text-center(v-on:click="hideSkills = !hideSkills" v-if="sortedSkillExperience.length - 1 > MIN_TECH")
 			font-awesome-icon(:icon="hideSkills ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'")
 </template>
 <script>
 import json from '@/assets/about.json'
-const MIN_SKILLS = 25
+const MIN_TECH = 20
 const ALL_JOBS = []
 export default {
-	name: 'ResumeSkillsComponent',
+	name: 'ResumeTechComponent',
 	props: {
 		toggleSelectedJob: {
 			type: Function,
@@ -48,7 +48,7 @@ export default {
 	data() {
 		return {
 			ALL_JOBS,
-			MIN_SKILLS,
+			MIN_TECH,
 			hideSkills: true,
 			exps: json.exps,
 		}
@@ -92,6 +92,7 @@ export default {
 	},
 	methods: {
 		calculateYears(startDate, endDate) {
+			endDate = endDate || new Date() // Set endDate to current date if not provided
 			const millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25
 			const durationMilliseconds = new Date(endDate) - new Date(startDate)
 			return durationMilliseconds / millisecondsPerYear
