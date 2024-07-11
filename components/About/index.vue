@@ -11,20 +11,20 @@
 			.card-body
 				Info
 	.col-md-6.col-xl-4.exp.about
-		Exp
+		Expertise
 </template>
 
 <script>
 import Info from '~/components/Contact/Info'
 import WhoAmI from '~/components/About/WhoAmI'
-import Exp from '~/components/About/Exp'
+import Expertise from '~/components/About/Expertise'
 
 export default {
 	name: 'AboutComponent',
 	components: {
 		Info,
 		WhoAmI,
-		Exp,
+		Expertise,
 	},
 }
 </script>
