@@ -24,18 +24,18 @@
 
 			.col-md-6.col-lg-4
 				FadeIn(:rate="randomRate(2)")
-					Work(:selectedJobs="selectedJobs" :toggleSelectedJob="toggleSelectedJob" :clearSelectedJobs="clearSelectedJobs")
+				Experience(:selectedJobs="selectedJobs" :toggleSelectedJob="toggleSelectedJob" :clearSelectedJobs="clearSelectedJobs")
 			.col-md-6.col-lg-4
 				FadeIn(:rate="randomRate(3)")
-					Skills(:selectedJobs="selectedJobs" :toggleSelectedJob="toggleSelectedJob" :clearSelectedJobs="clearSelectedJobs")
+					Tech(:selectedJobs="selectedJobs" :toggleSelectedJob="toggleSelectedJob" :clearSelectedJobs="clearSelectedJobs")
 </template>
 <script>
 import json from '@/assets/about.json'
 import Education from '~/components/Resume/Education'
 import Languages from '~/components/Resume/Languages'
 import Volunteer from '~/components/Resume/Volunteer'
-import Work from '~/components/Resume/Work'
-import Skills from '~/components/Resume/Skills'
+import Experience from '~/components/Resume/Experience'
+import Tech from '~/components/Resume/Tech'
 
 export default {
 	name: 'ResumeComponent',
@@ -43,8 +43,8 @@ export default {
 		Education,
 		Languages,
 		Volunteer,
-		Work,
-		Skills,
+		Experience,
+		Tech,
 	},
 	data() {
 		return {
