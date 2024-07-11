@@ -3,25 +3,120 @@
 		"intro": "Hello, I am",
 		"firstName": "Derek",
 		"lastName": "Johnston",
-		"title": "Lead Fullstack Developer (Generalist)"
+		"email": "Derek@Derekjohnston.ca",
+		"cell": "+1 (905) 926-8279",
+		"location": "Durham Region, Ontario, Canada",
+		"openTo": "Remote or local work",
+		"title": "Lead Fullstack Developer (Generalist)",
+		"WhoAmI": "A Fullstack / Mobile Developer Located In Our Lovely Earth",
+		"lookingFor": "Remote or local work",
+		"description": "With a background spanning software development roles at Oiika and E-Data Now!, along with project leadership at YHP, I've gained diverse experience in frontend and backend development. Additionally, my freelance consulting work has provided expertise in web and mobile development. This varied experience has equipped me with a versatile skill set and a deep understanding of software development across different domains."
 	},
 	"eds": [
 		{
 			"school": "Durham College",
 			"title": "Computer Programmer Analyst",
 			"dates": "2018",
+			"skills": [
+				"PHP",
+				"ASP",
+				"ASP.NET",
+				"Java",
+				"COBOL",
+				"SQL",
+				"MySQL",
+				"C#",
+				"C++",
+				"Xamarin",
+				"Xcode",
+				"XAML",
+				"HTML",
+				"CSS",
+				"JavaScript",
+				"TypeScript",
+				"Python",
+				"React.js",
+				"Vue.js",
+				"Node.js",
+				"Git",
+				"GitHub",
+				"GitLab",
+				"Visual Studio Code",
+				"Visual Studio",
+				"Android",
+				"iOS",
+				"Visual Basic",
+				"QBasic",
+				"Ubuntu",
+				"Dreamweaver",
+				"phpMyAdmin",
+				"Android Studio",
+				"MS Visio",
+				"MS PowerPoint",
+				"MS FrontPage",
+				"MS Project",
+				"MS Access",
+				"MS Excel",
+				"MS Word"
+			],
 			"description": "I hold a three-year advanced diploma in Computer Programmer Analyst, with my final project focusing on leading a partnership to develop a mobile communication application for verbally limited individuals. This project utilized Xamarin for its cross-platform compatibility. Throughout the program, I gained proficiency in various technologies including PHP, ASP, Java, COBOL, SQL, MySQL, C#, C++, Visual Basic, QBasic, VISIO, Ubuntu, MS PowerPoint, Dreamweaver, MS FrontPage, phpMyAdmin, MS Project, MS Access, Android Studio, MS Excel, Visual Studio, and MS Word."
 		}
 	],
 	"exps": [
 		{
-			"startDate": "Sat May 01 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
-			"endDate": "Sun Oct 01 2023 00:00:00 GMT-0400 (Eastern Daylight Time)",
+			"startDate": "Sun Oct 01 2023",
+			"endDate": "",
+			"icon": "fa-solid fa-laptop",
+			"employer": "JSD",
+			"title": "Freelance",
+			"description": "Providing development consulting services primary with web and mobile development.",
+			"roles": ["Frontend Developer", "Mobile Developer"],
+			"skills": [
+				"TypeScript",
+				"Express.js",
+				"Flutter",
+				"iOS",
+				"React.js",
+				"PHP",
+				"Next.js",
+				"Docker Products",
+				"SASS",
+				"Redux.js",
+				"Vue.js",
+				"Node.js",
+				"Android",
+				"Nuxt.js",
+				"JavaScript",
+				"Amazon Web Services (AWS)",
+				"Git",
+				"Java",
+				"Python",
+				"SQL"
+			],
+			"points": [
+				"Developed web and mobile applications.",
+				"Independent and team-based approach.",
+				"Working with LLMs and APIs."
+			]
+		},
+		{
+			"startDate": "Sat May 01 2021",
+			"endDate": "Sun Oct 01 2023",
 			"icon": "fa-solid fa-cubes-stacked",
 			"title": "Lead Full-Stack Developer",
 			"employer": "YHP",
 			"descriptionOld": "As the go-to problem solver, I tackled development roadblocks swiftly, ensuring project continuity. I led code base enhancements, improving team skills and delivering quality solutions. I evaluated task feasibility, offered alternatives, and facilitated collaboration on technical challenges. I provided accurate work estimations, guided team growth through coaching, and managed multiple projects efficiently. I oversaw merging and deployment, upgraded library dependencies, and conducted employee reviews. I led technical interviews and focused on aligning development efforts with YHP's strategic goals, primarily within the Wonderlab suite.",
 			"description": "Starting with a small team, I spearheaded the expansion efforts, progressively growing it to over 5 times its original size. Alongside team augmentation, I adeptly managed external resources to supplement our in-house capabilities, ensuring seamless integration and maximizing overall productivity. As the go-to problem solver, I tackled development roadblocks swiftly, ensuring project continuity. I led code base enhancements, improving team skills and delivering quality solutions. I evaluated task feasibility, offered alternatives, and facilitated collaboration on technical challenges. I provided accurate work estimations, guided team growth through coaching, and managed multiple projects efficiently. I oversaw merging and deployment, upgraded library dependencies, and conducted employee reviews. I led technical interviews and focused on aligning development efforts with YHP's strategic goals, primarily within the Wonderlab suite.",
+			"points": [
+				"Spearheaded the expansion efforts (2 -> 10 developers, 3 projects)",
+				"Go-to problem solver including providing support for other teams",
+				"Tackling development roadblocks swiftly",
+				"Led code base enhancements, improving team skills and delivering quality solutions.",
+				"Evaluated task feasibility, offered alternatives, and facilitated collaboration on technical challenges.",
+				"Provided accurate work estimations, guided team growth through coaching, and managed multiple projects efficiently.",
+				"Oversaw merging and deployment, upgraded library dependencies, and conducted employee reviews.",
+				"Led technical interviews and focused on aligning development efforts with YHP's strategic goals, primarily within the Wonderlab suite."
+			],
 			"roles": [
 				"Lead Full-Stack Developer",
 				"Frontend Developer",
@@ -48,8 +143,8 @@
 			]
 		},
 		{
-			"startDate": "Sun Dec 01 2019 00:00:00 GMT-0500 (Eastern Standard Time)",
-			"endDate": "Sat May 01 2021 00:00:00 GMT-0400 (Eastern Daylight Time)",
+			"startDate": "Sun Dec 01 2019",
+			"endDate": "Sat May 01 2021",
 			"icon": "fa-solid fa-laptop",
 			"employer": "JSD",
 			"title": "Freelance",
@@ -75,11 +170,16 @@
 				"Amazon Web Services (AWS)",
 				"Git",
 				"Java"
+			],
+			"points": [
+				"Developed web and mobile applications.",
+				"Completed greenfield and component development.",
+				"Independent and team-based approach."
 			]
 		},
 		{
-			"startDate": "Sun Apr 01 2018 00:00:00 GMT-0500 (Eastern Standard Time)",
-			"endDate": "Sun Sep 01 2019 00:00:00 GMT-0400 (Eastern Daylight Time)",
+			"startDate": "Sun Apr 01 2018",
+			"endDate": "Sun Sep 01 2019",
 			"employer": "E-data Now!",
 			"title": "Software Developer",
 			"description": "Worked as a Software Craftsman for “E-Data Now!” (EDN) product. EDN is a near real time data collection system. The primary use case is inspection and auditing in the automotive industry. Typically a user will perform audits using EDN Client (iOS/Swift/C++) and enter their Time sheet’s using EDN Time (Flutter/Dart). The data is pushed up to a Rails API, where it’s presented to the Web Administrators using a cutting edge Nuxt.js/Vue.js frontend stack. I had the opportunity to write code for the frontend, and backend while assisting with mobile bug fixes. Beyond my developer duties, I maintained test plans and test cases for the entire suite of EDN products. While performing testing duties, I was also mandated to write automated and load tests.",
@@ -101,11 +201,16 @@
 				"Java",
 				"Git",
 				"PostgreSQL"
+			],
+			"points": [
+				"Excelled at my felid placement and landed a full-time job.",
+				"Worked on the frontend, backend, and mobile development stacks.",
+				"Lead the optimization pass, identifying and fixing api bottlenecks."
 			]
 		},
 		{
-			"startDate": "Mon May 01 2017 00:00:00 GMT-0400 (Eastern Daylight Time)",
-			"endDate": "Mon Apr 01 2019 00:00:00 GMT-0400 (Eastern Daylight Time)",
+			"startDate": "Mon May 01 2017",
+			"endDate": "Mon Apr 01 2019",
 			"dates": "Dec 2019 - May 2021",
 			"employer": "Oiika",
 			"title": "Software Engineer",
@@ -119,13 +224,30 @@
 				"SASS",
 				"Git",
 				"Node.js",
-				"JavaScript"
+				"JavaScript",
+				"Tailwind CSS"
+			],
+			"points": [
+				"Developed web and mobile applications.",
+				"First startup experienced.",
+				"Independent and team-based approach.",
+				"Self starter required"
 			]
 		}
 	],
 	"volunteers": [
 		{
-			"startDate": "Sat Nov 01 2023 00:00:00 GMT-0400 (Eastern Daylight Time)",
+			"startDate": "Sat Mar 01 2024",
+			"endDate": "",
+			"icon": "fa-solid fa-cubes-stacked",
+			"employer": "Virtual Coffee",
+			"title": "Event Leader",
+			"description": "Science and Technology",
+			"roles": [],
+			"skills": []
+		},
+		{
+			"startDate": "Sat Nov 01 2023",
 			"endDate": "",
 			"icon": "fa-solid fa-cubes-stacked",
 			"employer": "Virtual Coffee",
@@ -135,7 +257,7 @@
 			"skills": []
 		},
 		{
-			"startDate": "Sun Mar 01 2023 00:00:00 GMT-0500 (Eastern Standard Time)",
+			"startDate": "Sun Mar 01 2023",
 			"endDate": "",
 			"icon": "fa-solid fa-laptop",
 			"employer": "Virtual Coffee",
@@ -145,20 +267,24 @@
 			"skills": []
 		},
 		{
-			"startDate": "Sun Apr 01 2020 00:00:00 GMT-0500 (Eastern Standard Time)",
-			"endDate": "Sun May 01 2020 00:00:00 GMT-0400 (Eastern Daylight Time)",
+			"startDate": "Sun Apr 01 2020",
+			"endDate": "Sun May 01 2020",
 			"employer": "Crown International",
 			"title": "Frontend Developer",
 			"description": "Science and Technology",
+			"shortDescription": "I volunteered at Crown International, where I developed the user profile page. This project involved creating an intuitive interface for managing user information and customizing profiles.",
+			"longDescription": "As a volunteer at Crown International, I took on the task of developing the user profile page. This project aimed to create a seamless and user-friendly interface for users to manage their personal information and customize their profiles. Using modern web development technologies, I focused on delivering a high-quality solution that enhanced the overall user experience. My responsibilities included designing the UI/UX, implementing frontend features using React, and ensuring the backend integration was smooth and efficient. This experience allowed me to contribute my skills to a meaningful project and further develop my expertise in web development.",
 			"roles": [],
 			"skills": []
 		},
 		{
-			"startDate": "Mon Mar 01 2020 00:00:00 GMT-0400 (Eastern Daylight Time)",
-			"endDate": "Mon Sep 01 2020 00:00:00 GMT-0400 (Eastern Daylight Time)",
+			"startDate": "Mon Mar 01 2020",
+			"endDate": "Mon Sep 01 2020",
 			"employer": "Mintbean",
 			"title": "Hackathon Lead",
 			"description": "Science and Technology",
+			"shortDescription": "I volunteered at Mintbean, where I organized and ran hackathons. My role involved coordinating events, mentoring participants, and fostering a collaborative environment for developers to innovate and learn.",
+			"longDescription": "As a volunteer at Mintbean, I played a key role in organizing and running hackathons. My responsibilities included coordinating event logistics, promoting the hackathons, and ensuring a smooth execution. During the events, I mentored participants, provided technical guidance, and facilitated workshops to help developers improve their skills. I also focused on creating an inclusive and collaborative atmosphere, encouraging innovation and learning among attendees. This experience allowed me to contribute to the developer community, enhance my leadership abilities, and stay updated with the latest technologies and trends in software development.",
 			"roles": [],
 			"skills": []
 		}
