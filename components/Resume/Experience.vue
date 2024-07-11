@@ -5,7 +5,6 @@
 				.col-lg-8
 					h4 Experience
 					span.line
-				//- TODO: Add display options for point in form
 				.col-lg-4
 					<div class="form-check">
 						<label class="form-check-label" for="flexCheckDefault">

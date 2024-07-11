@@ -13,7 +13,6 @@
 </template>
 
 <script>
-// TODO: use json vs static
 import json from '@/assets/about.json'
 export default {
 	name: 'AboutWhoAmIComponent',

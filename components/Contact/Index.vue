@@ -18,8 +18,8 @@
 						h4.contact-title
 							| Email Me
 						.form-group.py-1
-							input.form-control(type="text" id="name" name="name" value="Derek@DerekJohnston.ca" disabled)
-						form(action="https://formspree.io/f/derek@derekjohnston.ca" method="post")
+							input.form-control(type="text" id="name" name="name" :value="about.email" disabled)
+						form(:action="'https://formspree.io/f/' + about.email" method="post")
 							.form-group.py-1
 								input.form-control(type="text" id="name" name="name" placeholder="Name *" required)
 							.form-group.py-1
@@ -40,7 +40,7 @@
 						Socials
 </template>
 <script>
-//TODO: use json vs static
+import json from '@/assets/about.json'
 import Info from '~/components/Contact/Info'
 
 export default {
@@ -50,6 +50,7 @@ export default {
 	},
 	data() {
 		return {
+			about: json.about,
 			showMap: true,
 			hoveringContact: false,
 			showContact: false,
