@@ -1,43 +1,43 @@
 <template lang="pug">
-	.row
-		.col-xl-6.p-0
-			.contact
-				.map
-					iframe(
-						width="100%"
-						height="100%"
-						style="border: 0"
-						loading="lazy"
-						allowfullscreen
-						referrerpolicy="no-referrer-when-downgrade"
-						:src="location")
-		.col-xl-6.col-lg-12
-			.row
-				.col-md-6.py-2
-					.contact-form-card.text-center
-						h4.contact-title
-							| Email Me
+.row
+	.col-xl-6.p-0
+		.contact
+			.map
+				iframe(
+					width="100%"
+					height="100%"
+					style="border: 0"
+					loading="lazy"
+					allowfullscreen
+					referrerpolicy="no-referrer-when-downgrade"
+					:src="location")
+	.col-xl-6.col-lg-12
+		.row
+			.col-md-6.py-2
+				.contact-form-card.text-center
+					h4.contact-title
+						| Email Me
+					.form-group.py-1
+						input.form-control(type="text" id="name" name="name" :value="about.email" disabled)
+					form(:action="'https://formspree.io/f/' + about.email" method="post")
 						.form-group.py-1
-							input.form-control(type="text" id="name" name="name" :value="about.email" disabled)
-						form(:action="'https://formspree.io/f/' + about.email" method="post")
-							.form-group.py-1
-								input.form-control(type="text" id="name" name="name" placeholder="Name *" required)
-							.form-group.py-1
-								input.form-control(type="email" id="email" name="email" placeholder="Email *" required)
-							.form-group.py-1
-								input.form-control(type="text" id="subject" name="subject" placeholder="Subject *" required)
-							.form-group.py-1
-								textarea.form-control(placeholder="Message *" id="message" name="message" rows="7" required)
-							.form-group.py-1
-								button.btn.btn-primary(type="submit") 
-									| Send Message
-				.col-md-6
-					.contact-info-card.d-sm-none.d-md-block
-						h4.contact-title
-							| Get in touch 
-						Info
-					.d-md-none.py-2
-						Socials
+							input.form-control(type="text" id="name" name="name" placeholder="Name *" required)
+						.form-group.py-1
+							input.form-control(type="email" id="email" name="email" placeholder="Email *" required)
+						.form-group.py-1
+							input.form-control(type="text" id="subject" name="subject" placeholder="Subject *" required)
+						.form-group.py-1
+							textarea.form-control(placeholder="Message *" id="message" name="message" rows="7" required)
+						.form-group.py-1
+							button.btn.btn-primary(type="submit") 
+								| Send Message
+			.col-md-6
+				.contact-info-card.d-sm-none.d-md-block
+					h4.contact-title
+						| Get in touch 
+					Info
+				.d-md-none.py-2
+					Socials
 </template>
 <script>
 import json from '@/assets/about.json'
