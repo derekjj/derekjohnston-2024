@@ -1,7 +1,7 @@
 <template lang="pug">
 .card
 	.card-header.py-2
-		h2 My Experience
+		h2 My Expertise
 		span.line
 	.card-body
 		.row.my-2(v-for="(role, index) in roles" :key="index")
