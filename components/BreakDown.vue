@@ -286,6 +286,7 @@ export default {
 				})
 		},
 		calculateYears(startDate, endDate) {
+			endDate = endDate || new Date() // Set endDate to current date if not provided
 			const millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25
 			const durationMilliseconds = new Date(endDate) - new Date(startDate)
 			return durationMilliseconds / millisecondsPerYear
