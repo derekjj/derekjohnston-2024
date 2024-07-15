@@ -21,4 +21,17 @@ export default defineNuxtConfig({
 		'~/assets/styles/main.scss',
 	],
 	modules: ['@nuxtjs/eslint-module'],
+	buildModules: ['@nuxtjs/google-analytics'],
+	googleAnalytics: {
+		id: process.env.GOOGLE_ANALYTICS_ID ?? 'G-NPN04H4TNV',
+	},
+	publicRuntimeConfig: {
+		googleAnalytics: {
+			id: process.env.GOOGLE_ANALYTICS_ID,
+			debug: {
+				enabled: true,
+				sendHitTask: true,
+			},
+		},
+	},
 })
