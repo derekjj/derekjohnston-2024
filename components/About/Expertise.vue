@@ -12,7 +12,7 @@
 				.row.b
 					.col-12(:class="index < roles.length - 1 && 'border-bottom'")
 						h6.lh-lg.mt-1 {{ role.title }}
-					.col-6.text-center(v-for="(job, i) in jobsWithRole(role.title)" :key="i")
+					.col-6.text-center(v-for="(job, i) in getUniqueExperiencesByRole(role.title)" :key="i")
 						.subtitle {{ job.employer }}
 </template>
 
@@ -34,8 +34,21 @@ export default {
 			)
 			return expRole ? expRole.exps.map((exp) => exp.title) : []
 		},
-		jobsWithRole(role) {
-			return this.exps.filter((exp) => exp.roles.includes(role))
+		getUniqueExperiencesByRole(role) {
+			const filteredExps = this.exps.filter((exp) =>
+				exp.roles.includes(role)
+			)
+			const uniqueEmployers = new Set()
+			const uniqueExps = []
+
+			for (const exp of filteredExps) {
+				if (!uniqueEmployers.has(exp.employer)) {
+					uniqueEmployers.add(exp.employer)
+					uniqueExps.push(exp)
+				}
+			}
+
+			return uniqueExps
 		},
 	},
 }
