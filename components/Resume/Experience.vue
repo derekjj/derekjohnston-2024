@@ -12,7 +12,7 @@
 						</label>
 						<input class="form-check-input" type="checkbox" id="flexCheckDefault"  v-model="isPointForm">
 					</div>
-					a(@click="clearSelectedJobs()" v-show="selectedJobs.length > 0")
+					a(@click="clearSelectedJobs()" :class="selectedJobs.length === 0 && 'hidden'")
 						button.clear.btn.btn-secondary.p-1 clear selected 
 
 	.card-body
@@ -99,5 +99,8 @@ export default {
 }
 .col-3 {
 	padding-right: 0;
+}
+.hidden {
+	visibility: hidden;
 }
 </style>
