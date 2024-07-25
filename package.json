@@ -43,7 +43,7 @@
 		"@nuxt/eslint-config": "^0.3.13",
 		"@nuxtjs/eslint-module": "^4.1.0",
 		"@types/bootstrap": "^5.2.10",
-		"@typescript-eslint/eslint-plugin": "^7.16.1",
+		"@typescript-eslint/eslint-plugin": "^7.17.0",
 		"@typescript-eslint/parser": "^7.16.1",
 		"@vue/language-plugin-pug": "^2.0.26",
 		"eslint": "^8.57.0",
