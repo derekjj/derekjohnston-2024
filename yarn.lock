@@ -1866,10 +1866,15 @@
     vscode-languageserver-textdocument "^1.0.11"
     vscode-uri "^3.0.8"
 
-"@volar/source-map@2.4.0-alpha.16", "@volar/source-map@~2.4.0-alpha.15":
+"@volar/source-map@2.4.0-alpha.16":
   version "2.4.0-alpha.16"
   resolved "https://registry.yarnpkg.com/@volar/source-map/-/source-map-2.4.0-alpha.16.tgz#3a86ffadbba6928cd3f6717220dd87f8c1522904"
   integrity sha512-sL9vNG7iR2hiKZor7UkD5Sufu3QCia4cbp2gX/nGRNSdaPbhOpdAoavwlBm0PrVkpiA19NZuavZoobD8krviFg==
+
+"@volar/source-map@~2.4.0-alpha.18":
+  version "2.4.0-alpha.18"
+  resolved "https://registry.yarnpkg.com/@volar/source-map/-/source-map-2.4.0-alpha.18.tgz#a2413932ff6b1821ae8efcbd9249d4da3f99f223"
+  integrity sha512-MTeCV9MUwwsH0sNFiZwKtFrrVZUK6p8ioZs3xFzHc2cvDXHWlYN3bChdQtwKX+FY2HG6H3CfAu1pKijolzIQ8g==
 
 "@vscode/l10n@^0.0.18":
   version "0.0.18"
@@ -2013,13 +2018,13 @@
   dependencies:
     rfdc "^1.4.1"
 
-"@vue/language-plugin-pug@^2.0.26":
-  version "2.0.26"
-  resolved "https://registry.yarnpkg.com/@vue/language-plugin-pug/-/language-plugin-pug-2.0.26.tgz#bd117e43fca8f71a417d6a6b162dde36782e64cd"
-  integrity sha512-+D6E5U3nAPpmAb58LT0Qa2rtB+IuyIBIDxnI05cziuwiGjlNGadzXgZb8/oOxpgXeTXB9Qg05c1yABf/VpmEyg==
+"@vue/language-plugin-pug@^2.0.28":
+  version "2.0.28"
+  resolved "https://registry.yarnpkg.com/@vue/language-plugin-pug/-/language-plugin-pug-2.0.28.tgz#bcadab800f2bff289509ff448c50ad9119be3639"
+  integrity sha512-m6IFIv7VyPxnYYO/mQ9EWm5xwEpb80qfwOXpsNm1u4/irny659ayuIjf+IC5M8kGOo+Wt4gQqDMMtYuBDg4QAA==
   dependencies:
-    "@volar/source-map" "~2.4.0-alpha.15"
-    volar-service-pug volar-2.4
+    "@volar/source-map" "~2.4.0-alpha.18"
+    volar-service-pug "0.0.59"
 
 "@vue/reactivity@3.4.34":
   version "3.4.34"
@@ -7026,7 +7031,7 @@ volar-service-html@0.0.59:
     vscode-languageserver-textdocument "^1.0.11"
     vscode-uri "^3.0.8"
 
-volar-service-pug@volar-2.4:
+volar-service-pug@0.0.59:
   version "0.0.59"
   resolved "https://registry.yarnpkg.com/volar-service-pug/-/volar-service-pug-0.0.59.tgz#9671fd18c2d9236612d3a0418a073a78e85e8adf"
   integrity sha512-kmch7yoqeGNlJuDzpw/YL2b89ilzBmWDd0lJbpG412/RXc3PJVA4usUK+SQHdVoF+qi5IcZL6IDxlvRiIrDgWg==
