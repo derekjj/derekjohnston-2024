@@ -8,9 +8,10 @@
 					.h5.brand-title Derek Johnston
 					.brand-subtitle Full Stack / Mobile Developer 
 		//- TODO: Fix this for mobile
-		button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+		button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            @click="visible=!visible")
 			span.navbar-toggler-icon
-		.collapse.navbar-collapse(id="navbarSupportedContent")
+		.navbar-collapse(id="navbarSupportedContent" :class="!visible?'collapse':''")
 			ul.w-100.navbar-nav
 				li.nav-item
 					a.nav-link(:class="visibleSections.includes('home') && 'active'"
@@ -52,6 +53,7 @@ export default {
 			sections: [],
 			intersectionObserver: null,
 			visibleSections: [],
+			visible: false,
 		}
 	},
 	mounted() {
@@ -199,7 +201,7 @@ a {
 a.active {
 	color: #f85c70 !important;
 }
-.navbar-collapse.collapse.show {
+.navbar-collapse {
 	background-color: #fff;
 	box-shadow: 0 1px 10px rgba(54, 54, 54, 0.18);
 }
