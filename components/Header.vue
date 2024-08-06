@@ -201,8 +201,11 @@ a {
 a.active {
 	color: #f85c70 !important;
 }
-.navbar-collapse {
+.navbar-collapse.collapse.show {
 	background-color: #fff;
 	box-shadow: 0 1px 10px rgba(54, 54, 54, 0.18);
+}
+.navbar-collapse {
+	background-color: #fff;
 }
 </style>
