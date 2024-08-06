@@ -19,6 +19,8 @@
 	// TODO: Portfolio
 	//- section(id="portfolio" ref="portfolio")
 	//- 	Portfolio
+	section(id="references" ref="references")
+		References
 	section(id="break-down" ref="break-down")
 		BreakDown
 	section(id="contact" ref="contact")
