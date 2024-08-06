@@ -2,10 +2,10 @@
 .card
 	.card-header
 			.row
-				.col-lg-8
+				.col-7
 					h4 Experience
 					span.line
-				.col-lg-4
+				.col-5
 					<div class="form-check">
 						<label class="form-check-label" for="flexCheckDefault">
 							| point form
