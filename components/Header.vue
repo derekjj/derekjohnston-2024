@@ -34,6 +34,9 @@
 				li.w-100.nav-item.text-end.d-sm-none.d-md-block
 					a.nav-link(:class="visibleSections.includes('resume') && 'active'" 
 						@click="section='resume'" right href="#resume") Resume
+				li.nav-item
+					a.nav-link(:class="visibleSections.includes('references') && 'active'" 
+						@click="section='references'" right href="#references") References
 				//- li.nav-item(href="#portfolio")
 				//- 	a.nav-link(:class="visibleSections.includes('portfolio') && 'active'" 
 				//- 	@click="section='portfolio'" right) Portfolio
