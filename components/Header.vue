@@ -155,8 +155,8 @@ export default {
 	background-color: #fff;
 	border-radius: 50%;
 	box-shadow: 0 5px 1px rgba(128, 128, 128, 0.13);
-	width: 170px;
-	border: 10px solid #fff;
+	width: 120px;
+	border: 5px solid #fff;
 }
 .brand-img.small {
 	border-radius: 50%;
@@ -188,7 +188,7 @@ export default {
 	display: flex;
 	box-shadow: 0 1px 10px rgba(54, 54, 54, 0.18);
 	-webkit-box-shadow: 0 1px 10px rgba(54, 54, 54, 0.18);
-	height: 70px;
+	height: 140px;
 }
 a {
 	text-decoration: none !important;
