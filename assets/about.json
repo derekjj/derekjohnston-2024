@@ -69,6 +69,7 @@
 			"icon": "fa-solid fa-laptop",
 			"employer": "JSD",
 			"title": "Freelance",
+			"url": "https://JohnstonSoftwareDevelopment.com",
 			"description": "Providing development consulting services primary with web and mobile development.",
 			"roles": ["Frontend Developer", "Mobile Developer"],
 			"skills": [
@@ -94,9 +95,12 @@
 				"SQL"
 			],
 			"points": [
-				"Developed web and mobile applications.",
-				"Independent and team-based approach.",
-				"Working with LLMs and APIs."
+				"Who’s Jimmy Project: Revising and upgrading the tech stack for the 'Who's Jimmy' project, enhancing its functionality and performance. Planning to add a new section featuring teaching videos that showcase James Gawley's extensive experience in the film industry, highlighting his expertise and craftsmanship.",
+				"Frontend UI/UX Enhancement Project: Collaborated with team to enhance frontend UI/UX of an existing web application using ReactJS and Tailwind CSS, resulting in improved user engagement metrics.",
+				"Mobile-First Web App Prototype Development: Built a mobile-first web application prototype using NextJS, showcasing key features and functionalities within a tight deadline.",
+				"Responsive Web Design Optimization Sprint: Optimized responsive design of client's website using Bootstrap and CSS Grid, ensuring consistent user experience across desktop and mobile devices.",
+				"Nuxt 2 to Nuxt 3 Upgrade Project: Upgraded client's web app from Nuxt 2 to Nuxt 3, leveraging Vue 3 Composition API, optimizing SSR performance, and integrating TypeScript.",
+				"Additional Projects: Developed tailored e-commerce platforms, mobile applications, and customized software solutions, effectively enhancing clients' online footprint and operational efficiencies."
 			]
 		},
 		{
@@ -105,17 +109,25 @@
 			"icon": "fa-solid fa-cubes-stacked",
 			"title": "Lead Full-Stack Developer",
 			"employer": "YHP",
+			"url": "https://yhp.co",
+			"url2": "https://www.yhp-wonderlab.com",
 			"descriptionOld": "As the go-to problem solver, I tackled development roadblocks swiftly, ensuring project continuity. I led code base enhancements, improving team skills and delivering quality solutions. I evaluated task feasibility, offered alternatives, and facilitated collaboration on technical challenges. I provided accurate work estimations, guided team growth through coaching, and managed multiple projects efficiently. I oversaw merging and deployment, upgraded library dependencies, and conducted employee reviews. I led technical interviews and focused on aligning development efforts with YHP's strategic goals, primarily within the Wonderlab suite.",
 			"description": "Starting with a small team, I spearheaded the expansion efforts, progressively growing it to over 5 times its original size. Alongside team augmentation, I adeptly managed external resources to supplement our in-house capabilities, ensuring seamless integration and maximizing overall productivity. As the go-to problem solver, I tackled development roadblocks swiftly, ensuring project continuity. I led code base enhancements, improving team skills and delivering quality solutions. I evaluated task feasibility, offered alternatives, and facilitated collaboration on technical challenges. I provided accurate work estimations, guided team growth through coaching, and managed multiple projects efficiently. I oversaw merging and deployment, upgraded library dependencies, and conducted employee reviews. I led technical interviews and focused on aligning development efforts with YHP's strategic goals, primarily within the Wonderlab suite.",
 			"points": [
-				"Spearheaded the expansion efforts (2 -> 10 developers, 3 projects)",
-				"Go-to problem solver including providing support for other teams",
-				"Tackling development roadblocks swiftly",
-				"Led code base enhancements, improving team skills and delivering quality solutions.",
-				"Evaluated task feasibility, offered alternatives, and facilitated collaboration on technical challenges.",
-				"Provided accurate work estimations, guided team growth through coaching, and managed multiple projects efficiently.",
-				"Oversaw merging and deployment, upgraded library dependencies, and conducted employee reviews.",
-				"Led technical interviews and focused on aligning development efforts with YHP's strategic goals, primarily within the Wonderlab suite."
+				"Implemented agile methodologies to accelerate the delivery of high-quality software, enhancing project efficiency, fostering a culture of continuous improvement through regular sprint reviews and retrospectives, and enabling agile adaptation to evolving client requirements.",
+				"Mentored junior developers and conducted thorough code reviews, fostering skill development and ensuring adherence to best practices in software development and project management.",
+				"Created a collaborative and innovative environment, steering the team toward achieving ambitious goals, which resulted in robust and versatile projects that added significant value to the company.",
+				"Led comprehensive staff performance reviews, managed full-cycle recruitment, and facilitated smooth employee transitions, thereby maintaining team morale and continuity.",
+				"Developed and maintained various game websites using diverse technology stacks to enhance functionality and user experience, while also creating dynamic and responsive admin controllers. These contributions supported operational efficiency across multiple projects and teams within the organization.",
+				"Main Product Wonderlab: As the lead developer for Wonderlab, I spearheaded the white-labeling of the event platform, significantly reducing the setup costs for new live events. This strategic move allowed clients to customize the platform to their specific branding and event needs without incurring extensive development costs, making our solution both cost-effective and highly adaptable.",
+				{
+					"main": "I directed multiple cross-functional teams to develop a suite of gamified SaaS products, including:",
+					"points": [
+						"HR Onboarding System: Led the creation of an engaging and interactive HR onboarding system designed to streamline the employee induction process. This system incorporated gamified elements to enhance user engagement and retention, ensuring new hires had a memorable and effective onboarding experience.",
+						"Comprehensive Event Platform: Developed a versatile event platform supporting online and in-person events. Features included real-time chat, live streaming, and virtual networking rooms, allowing seamless transitions between virtual and physical event components, and catering to various event types and sizes.",
+						"Administrative Hub Application: Oversaw the development of an administrative hub that served as the control center for all event management activities. This application offered real-time analytics, user management, and content control features, empowering administrators to efficiently manage events and make data-driven decisions. The admin hub was designed with a user-friendly interface, ensuring even those with minimal technical expertise could navigate and utilize its full capabilities."
+					]
+				}
 			],
 			"roles": [
 				"Lead Full-Stack Developer",
@@ -148,6 +160,7 @@
 			"icon": "fa-solid fa-laptop",
 			"employer": "JSD",
 			"title": "Freelance",
+			"url": "https://JohnstonSoftwareDevelopment.com",
 			"description": "Providing development consulting services primary with web and mobile development.",
 			"roles": ["Frontend Developer", "Mobile Developer"],
 			"skills": [
@@ -172,9 +185,10 @@
 				"Java"
 			],
 			"points": [
-				"Developed web and mobile applications.",
-				"Completed greenfield and component development.",
-				"Independent and team-based approach."
+				"Created a Java Android application to replace an existing Cordova app for a shipping company. This improved performance and reliability, seamlessly integrating with the existing backend to enhance operational efficiency.",
+				"Tackle Hunger: Developed a map component to display food banks and their needs across North America, providing a critical tool for resource allocation and community support.",
+				"Who’s Jimmy: Ongoing development of a professional portfolio for a skilled film craftsman and clock-smith using VueJS/NuxtJS and PHP, effectively showcasing his work and enhancing his professional visibility.",
+				"Additional Projects: Delivered tailored e-commerce websites, mobile apps, and custom software solutions, significantly enhancing clients' digital presence and operational capabilities."
 			]
 		},
 		{
@@ -182,6 +196,7 @@
 			"endDate": "Sun Sep 01 2019",
 			"employer": "E-data Now!",
 			"title": "Software Developer",
+			"url": "https://www.edatanow.com/",
 			"description": "Worked as a Software Craftsman for “E-Data Now!” (EDN) product. EDN is a near real time data collection system. The primary use case is inspection and auditing in the automotive industry. Typically a user will perform audits using EDN Client (iOS/Swift/C++) and enter their Time sheet’s using EDN Time (Flutter/Dart). The data is pushed up to a Rails API, where it’s presented to the Web Administrators using a cutting edge Nuxt.js/Vue.js frontend stack. I had the opportunity to write code for the frontend, and backend while assisting with mobile bug fixes. Beyond my developer duties, I maintained test plans and test cases for the entire suite of EDN products. While performing testing duties, I was also mandated to write automated and load tests.",
 			"roles": [
 				"Frontend Developer",
@@ -203,9 +218,12 @@
 				"PostgreSQL"
 			],
 			"points": [
-				"Excelled at my felid placement and landed a full-time job.",
-				"Worked on the frontend, backend, and mobile development stacks.",
-				"Lead the optimization pass, identifying and fixing api bottlenecks."
+				"Developed frontend and backend code for a near real-time data collection system for inspection and auditing in the automotive industry.",
+				"Maintained test plans and test cases, wrote automated and load tests.",
+				"Enhanced dashboard functionality, added rearrangeable/drag and drop capabilities, and improved accessibility to meet Canadian standards.",
+				"Created Gatling scripts to simulate heavy real-world load, led performance improvement initiatives, and optimized slow API calls using Scout APM.",
+				"Resolved issues in iOS and Flutter codebases, improving performance and UX.",
+				"Secured a field placement, demonstrating exceptional performance that led to an offer for full-time employment."
 			]
 		},
 		{
@@ -214,6 +232,7 @@
 			"dates": "Dec 2019 - May 2021",
 			"employer": "Oiika",
 			"title": "Software Engineer",
+			"url": "https://Oiika.com",
 			"description": "Oiika was a web platform where passionate tutors and mentors share their knowledge with other individuals. (Mainly on the frontend) I worked on many random parts of this project, tasks grabbed from a ticket pool.",
 			"roles": ["Mobile Developer", "Frontend Developer"],
 			"skills": [
@@ -228,10 +247,11 @@
 				"Tailwind CSS"
 			],
 			"points": [
-				"Developed web and mobile applications.",
-				"First startup experienced.",
-				"Independent and team-based approach.",
-				"Self starter required"
+				"Collaborated closely with a small team to design and develop an online platform using modern web technologies such as TypeScript, Express.js, and React.js.",
+				"Played a key role in implementing responsive and dynamic user interfaces with ReactNative and Tailwind CSS, enhancing the platform's overall user experience.",
+				"Optimized backend functionality using Node.js and Express.js, ensuring efficient data handling and API performance.",
+				"Contributed to the development of a flexible and maintainable codebase by leveraging SASS and Git for version control, improving the team's workflow and code quality.",
+				"Actively participated in the testing and debugging process, helping to identify and resolve issues early, which improved the stability of the platform."
 			]
 		}
 	],
