@@ -70,7 +70,7 @@
 			"employer": "JSD",
 			"title": "Freelance",
 			"url": "https://JohnstonSoftwareDevelopment.com",
-			"description": "Providing development consulting services primary with web and mobile development.",
+			"description": "I have been working on multiple high-impact projects, including revising and upgrading the tech stack for the 'Who's Jimmy' project, enhancing its functionality, and planning a new section for teaching videos to showcase James Gawley’s expertise in the film industry. I collaborated with a team to improve the frontend UI/UX of a web application using ReactJS and Tailwind CSS, which resulted in improved user engagement metrics. I developed a mobile-first web app prototype with NextJS within a tight deadline, optimized responsive web designs using Bootstrap and CSS Grid, and upgraded a client’s web app from Nuxt 2 to Nuxt 3, leveraging Vue 3 Composition API and TypeScript for enhanced SSR performance. Additionally, I developed tailored e-commerce platforms, mobile applications, and custom software solutions that effectively enhanced clients' online presence and operational efficiency.",
 			"roles": ["Frontend Developer", "Mobile Developer"],
 			"skills": [
 				"TypeScript",
@@ -111,8 +111,7 @@
 			"employer": "YHP",
 			"url": "https://yhp.co",
 			"url2": "https://www.yhp-wonderlab.com",
-			"descriptionOld": "As the go-to problem solver, I tackled development roadblocks swiftly, ensuring project continuity. I led code base enhancements, improving team skills and delivering quality solutions. I evaluated task feasibility, offered alternatives, and facilitated collaboration on technical challenges. I provided accurate work estimations, guided team growth through coaching, and managed multiple projects efficiently. I oversaw merging and deployment, upgraded library dependencies, and conducted employee reviews. I led technical interviews and focused on aligning development efforts with YHP's strategic goals, primarily within the Wonderlab suite.",
-			"description": "Starting with a small team, I spearheaded the expansion efforts, progressively growing it to over 5 times its original size. Alongside team augmentation, I adeptly managed external resources to supplement our in-house capabilities, ensuring seamless integration and maximizing overall productivity. As the go-to problem solver, I tackled development roadblocks swiftly, ensuring project continuity. I led code base enhancements, improving team skills and delivering quality solutions. I evaluated task feasibility, offered alternatives, and facilitated collaboration on technical challenges. I provided accurate work estimations, guided team growth through coaching, and managed multiple projects efficiently. I oversaw merging and deployment, upgraded library dependencies, and conducted employee reviews. I led technical interviews and focused on aligning development efforts with YHP's strategic goals, primarily within the Wonderlab suite.",
+			"description": "In this role, I implemented agile methodologies to accelerate project delivery, mentored junior developers, and conducted thorough code reviews to ensure best practices were followed. I fostered a collaborative and innovative environment, leading to the development of robust and versatile projects that significantly added value to the company. I was responsible for comprehensive staff performance reviews, full-cycle recruitment, and facilitating smooth employee transitions. A key achievement was leading the development of Wonderlab, a white-labeled event platform that reduced setup costs for new live events and allowed for extensive client customization. Additionally, I directed cross-functional teams in creating a gamified HR onboarding system, a versatile event platform supporting both online and in-person events, and an administrative hub application offering real-time analytics and user management features.",
 			"points": [
 				"Implemented agile methodologies to accelerate the delivery of high-quality software, enhancing project efficiency, fostering a culture of continuous improvement through regular sprint reviews and retrospectives, and enabling agile adaptation to evolving client requirements.",
 				"Mentored junior developers and conducted thorough code reviews, fostering skill development and ensuring adherence to best practices in software development and project management.",
@@ -161,7 +160,7 @@
 			"employer": "JSD",
 			"title": "Freelance",
 			"url": "https://JohnstonSoftwareDevelopment.com",
-			"description": "Providing development consulting services primary with web and mobile development.",
+			"description": "During this period, I created a Java Android application to replace an existing Cordova app for a shipping company, improving performance and reliability while seamlessly integrating with the existing backend. I developed a map component for the Tackle Hunger project, displaying food banks and their needs across North America. Additionally, I worked on the ongoing development of a professional portfolio for a skilled film craftsman and clock-smith using VueJS/NuxtJS and PHP. I also delivered tailored e-commerce websites, mobile apps, and custom software solutions, significantly enhancing clients' digital presence and operational capabilities.",
 			"roles": ["Frontend Developer", "Mobile Developer"],
 			"skills": [
 				"TypeScript",
@@ -197,7 +196,7 @@
 			"employer": "E-data Now!",
 			"title": "Software Developer",
 			"url": "https://www.edatanow.com/",
-			"description": "Worked as a Software Craftsman for “E-Data Now!” (EDN) product. EDN is a near real time data collection system. The primary use case is inspection and auditing in the automotive industry. Typically a user will perform audits using EDN Client (iOS/Swift/C++) and enter their Time sheet’s using EDN Time (Flutter/Dart). The data is pushed up to a Rails API, where it’s presented to the Web Administrators using a cutting edge Nuxt.js/Vue.js frontend stack. I had the opportunity to write code for the frontend, and backend while assisting with mobile bug fixes. Beyond my developer duties, I maintained test plans and test cases for the entire suite of EDN products. While performing testing duties, I was also mandated to write automated and load tests.",
+			"description": "I developed frontend and backend code for a near real-time data collection system for inspection and auditing in the automotive industry. I maintained test plans, wrote automated and load tests, enhanced dashboard functionality, and optimized slow API calls using Scout APM. Additionally, I resolved issues in iOS and Flutter codebases, improving performance and UX. My exceptional performance during a field placement led to a full-time employment offer.",
 			"roles": [
 				"Frontend Developer",
 				"Backend Developer",
@@ -233,7 +232,7 @@
 			"employer": "Oiika",
 			"title": "Software Engineer",
 			"url": "https://Oiika.com",
-			"description": "Oiika was a web platform where passionate tutors and mentors share their knowledge with other individuals. (Mainly on the frontend) I worked on many random parts of this project, tasks grabbed from a ticket pool.",
+			"description": "I collaborated closely with a small team to design and develop an online platform using modern web technologies such as TypeScript, Express.js, and React.js. I played a key role in implementing responsive and dynamic user interfaces with ReactNative and Tailwind CSS, enhancing the platform's overall user experience. I optimized backend functionality using Node.js and Express.js, ensuring efficient data handling and API performance. My contributions included developing a flexible and maintainable codebase by leveraging SASS and Git for version control, as well as actively participating in the testing and debugging process to improve the platform's stability.",
 			"roles": ["Mobile Developer", "Frontend Developer"],
 			"skills": [
 				"TypeScript",
