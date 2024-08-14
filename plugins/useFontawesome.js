@@ -19,6 +19,7 @@ import {
 	faLaptop,
 	faMobileScreen,
 	faCubesStacked,
+	faUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons'
 library.add(faLinkedin, faGithub, faGitlab)
 library.add(
@@ -33,7 +34,8 @@ library.add(
 	faGithubSquare,
 	faLaptop,
 	faMobileScreen,
-	faCubesStacked
+	faCubesStacked,
+	faUpRightFromSquare
 )
 
 // This is important, we are going to let Nuxt worry about the CSS
