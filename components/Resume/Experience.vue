@@ -17,7 +17,7 @@
 
 	.card-body
 		template(v-for="(exp,i) in exps")
-			div(:class="selectedJobs.includes(i) && 'selected'" @click="toggleSelectedJob(i)" v-if="i < JOBS_TO_SHOW || isShown") 
+			div(:class="selectedJobs.includes(i) && 'selected'" @click="toggleSelectedJob(i)" v-if="i < JOBS_TO_SHOW || isShown || !isPointForm") 
 				//- TODO: Add collapsed state
 				div.p-2.option(title="Click to filter")
 					.row
@@ -52,8 +52,8 @@
 										li(v-for="(p, i) in point.points")
 											|{{p}}
 				hr(v-if="i < exps.length - 1 && (i < JOBS_TO_SHOW - 1 && !isShown )")
-		.col.text-center.button.pt-1(@click="isShown = !isShown")
-			font-awesome-icon(:icon="!isShown ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'")
+		.col.text-center.button.pt-1(@click="isShown = !isShown" v-if="isPointForm")
+			font-awesome-icon(:icon="(!isShown) ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'")
 </template>
 <script>
 //TODO: Add link to json
