@@ -10,7 +10,7 @@ export default {
 	name: 'ResumeButtonComponent',
 	methods: {
 		openPDF() {
-			window.open('/Resume Derek Johnston -phone.pdf', '_blank')
+			window.open('/Derek-Johnston-Resume-Full.pdf', '_blank')
 		},
 	},
 }
