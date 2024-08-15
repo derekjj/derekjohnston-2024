@@ -1,7 +1,7 @@
 <template lang="pug">            
 .sticky-top
 	nav.navbar.navbar-expand-md.navbar-light.bg-white.affix(data-spy="affix" data-offset-top="510" toggleable="lg")
-		a.navbar-brand.d-flex.d-md-none
+		a.navbar-brand.d-flex.d-sm-block.d-md-none
 			.row
 				img.brand-img.small(src="~/assets/me2.jpg" alt="Display Picture")
 				.col
@@ -210,5 +210,24 @@ a.active {
 }
 .navbar-collapse {
 	background-color: #fff;
+}
+
+/* Small Screen */
+@media (min-width: 576px) {
+	.navbar {
+		height: auto;
+		padding: 10px;
+	}
+	.sticky-top {
+		margin-left: -12px;
+		margin-right: -12px;
+	}
+}
+/* Medium Screen */
+@media (min-width: 768px) {
+	.navbar {
+		min-height: 140px;
+		padding: 10px;
+	}
 }
 </style>

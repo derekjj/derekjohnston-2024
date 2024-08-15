@@ -5,7 +5,7 @@
       h2.my-5.ml-3.text-danger
         | References
   .row
-    .col(
+    .col-lg-6(
       class="reference"
       v-for="reference in references"
       :key="reference.id")
