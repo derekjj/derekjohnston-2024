@@ -14,7 +14,7 @@
 							span(@click="toggleSelectedJob(index)")  {{index+1}}
 						span.options(:class="selectedJobs.length === 0 && 'selected'" @click="clearSelectedJobs()")  all
 			span.-webkit-linear-gradient
-	.card-body.pb-2
+	.card-body.pb-2( :class="['transition-height', { 'auto-height': showContent }]")
 		div(v-for="(value, index) in sortedSkillExperience" :key="index" :class="index > MIN_TECH && hideSkills && 'hide'")
 			.row.p-0
 				.col-8.p-0
@@ -110,5 +110,12 @@ span.selected {
 }
 .options {
 	cursor: pointer;
+}
+.transition-height {
+	overflow: hidden;
+	transition: height 0.5s ease;
+}
+.auto-height {
+	height: auto;
 }
 </style>

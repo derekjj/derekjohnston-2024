@@ -212,6 +212,14 @@ a.active {
 	background-color: #fff;
 }
 
+/* Extra Small Screen */
+@media (max-width: 575.98px) {
+	.navbar {
+		height: auto;
+		padding: 10px;
+	}
+}
+
 /* Small Screen */
 @media (min-width: 576px) {
 	.navbar {
