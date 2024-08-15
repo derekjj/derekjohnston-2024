@@ -36,8 +36,6 @@
 					h4.contact-title
 						| Get in touch 
 					Info
-				.d-md-none.py-2
-					Socials
 </template>
 <script>
 import json from '@/assets/about.json'
