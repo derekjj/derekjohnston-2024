@@ -32,13 +32,15 @@
 							template(v-if="exp.url")
 								<a class="link text-black" :href="exp.url" target="_blank" :title="`Link to ${exp.employer}`">
 									b {{ exp.employer }}
-									| &nbsp;<font-awesome-icon icon="fa-solid fa-up-right-from-square" />
+									ClientOnly
+										| &nbsp;<font-awesome-icon icon="fa-solid fa-up-right-from-square" />
 								</a>
 							template(v-else)
 								b.text-black {{ exp.employer }}&nbsp;
 							template(v-if="exp.url2")
-								<a class="link text-black" :href="exp.url2" target="_blank" :title="`Second link to ${exp.employer}`"> 
-									| &nbsp;<font-awesome-icon icon="fa-solid fa-up-right-from-square" />
+								<a class="link text-black" :href="exp.url2" target="_blank" :title="`Second link to ${exp.employer}`">
+									ClientOnly
+										| &nbsp;<font-awesome-icon icon="fa-solid fa-up-right-from-square" />
 								</a>
 					p.subtitle.text-justify(v-if="!isPointForm") {{ exp.description }} 
 					ul(v-else v-if="exp.points?.length > 0")
@@ -53,7 +55,8 @@
 											|{{p}}
 				hr(v-if="i < exps.length - 1 && (i < JOBS_TO_SHOW - 1 && !isShown )")
 		.col.text-center.button.pt-1(@click="isShown = !isShown" v-if="isPointForm")
-			font-awesome-icon(:icon="(!isShown) ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'")
+			ClientOnly
+				font-awesome-icon(:icon="(!isShown) ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'")
 </template>
 <script>
 //TODO: Add link to json
