@@ -234,7 +234,7 @@ a.active {
 /* Medium Screen */
 @media (min-width: 768px) {
 	.navbar {
-		min-height: 140px;
+		min-height: auto;
 		padding: 10px;
 	}
 }
