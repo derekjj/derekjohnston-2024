@@ -84,8 +84,7 @@ export default {
 	data: function () {
 		return {
 			isPointForm: true,
-			exps: json.exps,
-			eds: json.eds,
+			exps: [],
 			ALL_JOBS,
 			JOBS_TO_SHOW,
 			isShown: false,
@@ -101,6 +100,9 @@ export default {
 			},
 			deep: true,
 		},
+	},
+	mounted() {
+		this.exps = json.exps
 	},
 	methods: {
 		getMonthDay(date) {
