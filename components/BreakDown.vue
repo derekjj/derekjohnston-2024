@@ -112,8 +112,11 @@ export default {
 		estimatedCoffeeConsumption() {
 			const numberOfProjects =
 				this.github.projectCount + this.gitlab.projectCount
-			const numberOfCommits =
+			const numberOfCommits = isNaN(
 				this.github.commitCount + this.gitlab.commitCount
+			)
+				? 200
+				: this.github.commitCount + this.gitlab.commitCount
 			const yearsOfExperience = this.sortedSkillExperience[0]?.years
 			// Define arbitrary coefficients
 			const kA = 1.5 // Coffee consumption per project
@@ -125,7 +128,6 @@ export default {
 				numberOfProjects * kA +
 				numberOfCommits * kB +
 				yearsOfExperience * kC
-
 			return cupsConsumed
 		},
 		sortedSkillExperience() {
@@ -161,7 +163,10 @@ export default {
 				'github-project-count',
 				this.github.projectCount
 			)
-			localStorage.setItem('github-commit-count', this.github.commitCount)
+			localStorage.setItem(
+				'github-commit-count',
+				isNaN(this.github.commitCount) ? 200 : this.github.commitCount
+			)
 			localStorage.setItem(
 				'gitlab-project-count',
 				this.gitlab.projectCount
@@ -182,6 +187,7 @@ export default {
 			const gitlabCommitCount = localStorage.getItem(
 				'gitlab-commit-count'
 			)
+
 			// if not data in local storage
 			if (
 				!githubProjectCount ||
@@ -192,10 +198,18 @@ export default {
 				this.getData()
 			} else if (document.cookie.includes('with24hrs')) {
 				// if data is not stale
-				this.github.projectCount = parseInt(githubProjectCount)
-				this.github.commitCount = parseInt(githubCommitCount)
-				this.gitlab.projectCount = parseInt(gitlabProjectCount)
-				this.gitlab.commitCount = parseInt(gitlabCommitCount)
+				this.github.projectCount = isNaN(parseInt(githubProjectCount))
+					? 30
+					: parseInt(githubProjectCount)
+				this.github.commitCount = isNaN(parseInt(githubCommitCount))
+					? 200
+					: parseInt(githubCommitCount)
+				this.gitlab.projectCount = isNaN(parseInt(gitlabProjectCount))
+					? 1
+					: parseInt(gitlabProjectCount)
+				this.gitlab.commitCount = isNaN(parseInt(gitlabCommitCount))
+					? 15
+					: parseInt(gitlabCommitCount)
 			} else {
 				await this.getData()
 				await this.setCookie({
@@ -216,7 +230,8 @@ export default {
 					{ headers }
 				)
 				.then((response) => {
-					this.gitlab.projectCount = response.data.length
+					this.gitlab.projectCount =
+						response.data.length === 0 ? 1 : response.data.length
 					return this.getGitlabCommits(response.data, headers)
 				})
 				.catch(() => {
@@ -232,7 +247,10 @@ export default {
 						{ headers }
 					)
 					.then((response) => {
-						totalCommits += response.data.length
+						totalCommits +=
+							response.data.length === 0
+								? 15
+								: response.data.length
 					})
 					.catch(() => {
 						this.error = 'GitLab commits not loaded.'
@@ -251,16 +269,22 @@ export default {
 				})
 				.then((response) => {
 					this.github.projectCount = response.data.length
+						? 30
+						: response.data.length
 					const repos = response.data
 					return Promise.all(
 						repos.map((repo) =>
 							this.getGithubCommits(repo.full_name, headers)
 						)
 					).then((commitsCounts) => {
-						this.github.commitCount = commitsCounts.reduce(
-							(acc, val) => acc + val,
+						this.github.commitCount =
+							commitsCounts.reduce((acc, val) => acc + val, 0) ===
 							0
-						)
+								? 180
+								: commitsCounts.reduce(
+										(acc, val) => acc + val,
+										0
+									)
 					})
 				})
 				.catch(() => {
