@@ -1,23 +1,22 @@
 <template lang="pug">
 .container
-  .row
-    .col
-      h2.my-5.ml-3.text-danger
-        | References
-  .row
-    .col-lg-6(
-      class="reference"
-      v-for="reference in references"
-      :key="reference.id")
-      .card.h-100
-        .card-header
-          p "{{ reference.message }}"
-        .card-body.text-center 
-          <img :src="reference.photo" alt="Author photo" class="photo" />
-          br
-          | {{ reference.author }}
-          br
-          |{{ reference.title }} 
+.row
+	.col
+		h2.my-5.ml-3.text-danger
+			| References
+.row.justify-content-center.p-3
+	.col-lg-6.col-xl-4(
+		class="reference"
+		v-for="reference in references"
+		:key="reference.id")
+		a(:href="reference.link" target="_blank")
+			.card.h-100
+				.card-header
+					p(v-for="message in reference.messages") {{ message }}
+				.card-body.text-center
+					| {{ reference.author }}
+					br
+					|{{ reference.title }} 
 </template>
 
 <script>
@@ -28,19 +27,34 @@ export default {
 			references: [
 				{
 					id: 1,
-					message:
-						'To whom it may concern, \n Kindly note that Derek Johnston is recommended as a good candidate for future \n employment. Derek was employed at the company from May 25th, 2021, to September \n 15th, 2023. He worked as a Lead, Full Stack Developer and was responsible for \n participating in the development of multiple successful projects, in which he oversaw \n both front-end and back-end development teams. He also brought is expertise to lead \n the product technical decision. \n Derek was autonomous in his work and always willing to help both his direct team \n members and co-workers, as well as other departments. His rapport with his direct \n reports was particularly strong, and he excels at creating and maintaining strong \n internal relationships and supporting his team. \n We can recommend Derek for future employment, as he demonstrates strong technical \n skills and can be an asset to any company. \n ',
+					messages: [
+						'To whom it may concern,',
+						'Kindly note that Derek Johnston is recommended as a good candidate for future employment. Derek was employed at the company from May 25th, 2021, to September 15th, 2023. He worked as a Lead, Full Stack Developer and was responsible for participating in the development of multiple successful projects, in which he oversaw both front-end and back-end development teams. He also brought is expertise to lead the product technical decision.',
+						'Derek was autonomous in his work and always willing to help both his direct team members and co-workers, as well as other departments. His rapport with his direct reports was particularly strong, and he excels at creating and maintaining strong internal relationships and supporting his team.',
+						'We can recommend Derek for future employment, as he demonstrates strong technical skills and can be an asset to any company.',
+					],
 					author: 'Jérémy Ferland',
 					title: 'CTO at YHP',
-					photo: 'https://media.licdn.com/dms/image/D4E03AQECX4z5ucr4Uw/profile-displayphoto-shrink_400_400/0/1687958763260?e=1726704000&v=beta&t=jK-5aHJofaYXGYZbguEA3D1G9z3mwboFziIwn0F4EVg',
+					link: 'https://www.linkedin.com/in/jeremy-ferland/',
 				},
 				{
 					id: 2,
-					message:
+					messages: [
 						"I taught Derek in 2 (sort of 3) courses in Durham College's Computer Programmer Analyst program in 2017-2018. In my time working with Derek, he contributed meaningfully to a database project related to an autoshow and created a capstone project making a customizable communication board intended for youths on the autism spectrum. Derek's biggest strengths are probably his work ethic and time management; I specifically recall how when seeking work placements, Derek approached every single booth at a campus career event and came away with a number of possible placements when other students didn't; Derek knows how to take advantage of opportunities like this, and how to approach and relate to people. Derek is a strong communicator; great not just as a programmer but for working to meet clients' needs. Derek has also made himself available to speak to some of my current students about his experiences and mentoring some with regards to both web development and mobile development, with an emphasis on accessibility.",
+					],
 					author: 'Kyle Chapman',
 					title: 'Full-Time Faculty at Durham College',
-					photo: 'https://media.licdn.com/dms/image/D5603AQEGiscoolDwbA/profile-displayphoto-shrink_800_800/0/1711738706602?e=1726704000&v=beta&t=zeukx4C4rQGdAGj_7J8FLyPW44xWIqRWaYk6w0-WbF0',
+					link: 'https://www.linkedin.com/in/kyledchapman/',
+				},
+				{
+					id: 3,
+					messages: [
+						'Derek was a pivotal member of our team at E-Data Now!, where his work on a near real-time data collection system for the automotive industry showcased his technical expertise and attention to detail. Utilizing Ruby on Rails, VueJS, and Flutter, Derek not only enhanced functionality but also significantly improved system performance and accessibility. His proactive problem-solving and dedication to continuous improvement were invaluable assets.',
+						' At YHP, Derek took on the role of Lead Full-stack Developer, where he drove the development of innovative solutions like the Wonderlab event platform and a gamified HR onboarding system. His deep knowledge of technologies such as NextJS, ReactJS, and Docker, combined with his leadership in agile methodologies, enabled him to lead teams in delivering high-quality, user-centric products. Derek’s ability to mentor junior developers and foster a collaborative environment further underscored his value as a leader and skilled developer.',
+					],
+					author: 'Lee Kichko',
+					title: 'CTO at E-Data Now! (Phoenix Quality)',
+					link: 'https://www.linkedin.com/in/lee-kichko-a42b19178/',
 				},
 				// Add more references as needed
 			],
@@ -50,6 +64,12 @@ export default {
 </script>
 
 <style scoped>
+a {
+	text-decoration: none;
+}
+.container {
+	max-width: 1700px;
+}
 .card {
 	background-color: white;
 	box-shadow:
