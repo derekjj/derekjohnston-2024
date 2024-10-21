@@ -50,7 +50,7 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-nuxt": "^4.0.0",
 		"eslint-plugin-prettier": "^5.2.1",
-		"eslint-plugin-vue": "^9.28.0",
+		"eslint-plugin-vue": "^9.29.1",
 		"husky": "^9.1.6",
 		"pinst": "^3.0.0",
 		"prettier": "^3.3.2",
