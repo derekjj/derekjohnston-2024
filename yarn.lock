@@ -5763,12 +5763,7 @@ perfect-debounce@^1.0.0:
   resolved "https://registry.yarnpkg.com/perfect-debounce/-/perfect-debounce-1.0.0.tgz#9c2e8bc30b169cc984a58b7d5b28049839591d2a"
   integrity sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==
 
-picocolors@^1.0.0, picocolors@^1.0.1, picocolors@~1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.1.tgz#a8ad579b571952f0e5d25892de5445bcfe25aaa1"
-  integrity sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==
-
-picocolors@^1.1.0:
+picocolors@^1.0.0, picocolors@^1.0.1, picocolors@^1.1.0, picocolors@~1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.1.0.tgz#5358b76a78cde483ba5cef6a9dc9671440b27d59"
   integrity sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==
@@ -6204,7 +6199,7 @@ pug-walk@^2.0.0:
   resolved "https://registry.yarnpkg.com/pug-walk/-/pug-walk-2.0.0.tgz#417aabc29232bb4499b5b5069a2b2d2a24d5f5fe"
   integrity sha512-yYELe9Q5q9IQhuvqsZNwA5hfPkMJ8u92bQLIMcsMxf/VADjNtEYptU+inlufAFYcWdHlwNfZOEnOOQrZrcyJCQ==
 
-pug@^3.0.2, pug@^3.0.3:
+pug@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/pug/-/pug-3.0.3.tgz#e18324a314cd022883b1e0372b8af3a1a99f7597"
   integrity sha512-uBi6kmc9f3SZ3PXxqcHiUZLmIXgfgWooKWXcwSGwQd2Zi5Rb0bT14+8CJjJgI8AB+nndLaNgHGrcc6bPIB665g==
@@ -7377,13 +7372,13 @@ vite-plugin-inspect@^0.8.7:
     picocolors "^1.0.1"
     sirv "^2.0.4"
 
-vite-plugin-pug@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/vite-plugin-pug/-/vite-plugin-pug-0.3.2.tgz#410d54d65a8d2b06bd01bba3daa38430caa929e4"
-  integrity sha512-Wqqdd8v7Hk+p+pJyVX+RzhRv6PN6yps17zNjx0Wx6P2/sd4KemWLIHAclNxq0sTKjlzxERWXaQn2E7kY71zeSg==
+vite-plugin-pug@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-pug/-/vite-plugin-pug-0.4.1.tgz#81052780039c25995e5e54921c1feccaea9f2215"
+  integrity sha512-2M4qNpIgUV+zA63w566jyp3LpaIuSBMfghOzue7PYnFTms48Ux78Bp/ccRSaGRbFW9BkTxdqgi5h7xvBN7YruQ==
   dependencies:
     picocolors "~1"
-    pug "^3.0.2"
+    pug "^3.0.3"
 
 vite-plugin-vue-inspector@^5.2.0:
   version "5.2.0"
