@@ -2488,10 +2488,10 @@
   resolved "https://registry.yarnpkg.com/@volar/source-map/-/source-map-2.4.1.tgz#6a6d02b9dac66a5dd99378dcdae63107a0b45fce"
   integrity sha512-Xq6ep3OZg9xUqN90jEgB9ztX5SsTz1yiV8wiQbcYNjWkek+Ie3dc8l7AVt3EhDm9mSIR58oWczHkzM2H6HIsmQ==
 
-"@volar/source-map@~2.4.8":
-  version "2.4.8"
-  resolved "https://registry.yarnpkg.com/@volar/source-map/-/source-map-2.4.8.tgz#bc699a095aaab405ddc0e2c5a011edc151e787fd"
-  integrity sha512-jeWJBkC/WivdelMwxKkpFL811uH/jJ1kVxa+c7OvG48DXc3VrP7pplSWPP2W1dLMqBxD+awRlg55FQQfiup4cA==
+"@volar/source-map@~2.4.11":
+  version "2.4.11"
+  resolved "https://registry.yarnpkg.com/@volar/source-map/-/source-map-2.4.11.tgz#5876d4531508129724c2755e295db1df98bd5895"
+  integrity sha512-ZQpmafIGvaZMn/8iuvCFGrW3smeqkq/IIh9F1SdSx9aUl0J4Iurzd6/FhmjNO5g2ejF3rT45dKskgXWiofqlZQ==
 
 "@vscode/l10n@^0.0.18":
   version "0.0.18"
@@ -2654,12 +2654,12 @@
   dependencies:
     rfdc "^1.4.1"
 
-"@vue/language-plugin-pug@^2.1.10":
-  version "2.1.10"
-  resolved "https://registry.yarnpkg.com/@vue/language-plugin-pug/-/language-plugin-pug-2.1.10.tgz#0a2668ff677bea09bfd90ebe2d1b1387042cf235"
-  integrity sha512-BTvuCZyBdI1DbzIsgkYKLJtRWr1J38iUf7D8rmlxMIakD7oqsoBjB62S+LTYNr4ZgCZi1nkVaANTyjVnesDKZw==
+"@vue/language-plugin-pug@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@vue/language-plugin-pug/-/language-plugin-pug-2.2.0.tgz#592c284a147432a85d60134f5525f7e75cf5dcf0"
+  integrity sha512-DcE08ZGP64aSUUA6iTE65cN1C2bsdlAFOaWEV33Yfdov6XRpScjzY42IRayTUHo4oJkcvbCJiHNr3RiW1XXgRw==
   dependencies:
-    "@volar/source-map" "~2.4.8"
+    "@volar/source-map" "~2.4.11"
     volar-service-pug "0.0.62"
 
 "@vue/reactivity@3.5.13":
