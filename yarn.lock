@@ -2409,10 +2409,10 @@
   dependencies:
     rfdc "^1.4.1"
 
-"@vue/language-plugin-pug@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@vue/language-plugin-pug/-/language-plugin-pug-2.2.0.tgz#592c284a147432a85d60134f5525f7e75cf5dcf0"
-  integrity sha512-DcE08ZGP64aSUUA6iTE65cN1C2bsdlAFOaWEV33Yfdov6XRpScjzY42IRayTUHo4oJkcvbCJiHNr3RiW1XXgRw==
+"@vue/language-plugin-pug@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@vue/language-plugin-pug/-/language-plugin-pug-2.2.2.tgz#c04de9ca8e9e5b8c25e3d1cdde2a0dec3cc8ed10"
+  integrity sha512-9QTJkbfuNL2vLplD8bF9ms5rr/wVYLsq/VNgHrPcDiKiGFvMnaAX42rdRaa4DDJBXETO2ryu4jm1mt2WTAa7aw==
   dependencies:
     "@volar/source-map" "~2.4.11"
     volar-service-pug "0.0.62"
