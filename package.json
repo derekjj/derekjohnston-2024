@@ -47,7 +47,7 @@
 		"@typescript-eslint/parser": "^7.18.0",
 		"@vue/language-plugin-pug": "^2.2.10",
 		"eslint": "^8.57.1",
-		"eslint-config-prettier": "^10.1.2",
+		"eslint-config-prettier": "^10.1.5",
 		"eslint-plugin-nuxt": "^4.0.0",
 		"eslint-plugin-prettier": "^5.5.1",
 		"eslint-plugin-vue": "^9.33.0",
